@@ -1,0 +1,681 @@
+{
+  "region_count": 66,
+  "rgb_mean_pixel_std": 0.198636,
+  "albedo_mean_pixel_std": 0.082549,
+  "pixel_std_delta": -0.116087,
+  "pixel_std_delta_ci95": [
+    -0.130672,
+    -0.101371
+  ],
+  "regions_pixel_variation_reduced": 65,
+  "rgb_mean_color_std": 0.183442,
+  "albedo_mean_color_std": 0.068047,
+  "mean_color_std_delta": -0.115396,
+  "mean_color_std_delta_ci95": [
+    -0.131385,
+    -0.099251
+  ],
+  "regions_mean_color_variation_reduced": 63,
+  "region_details": [
+    {
+      "region_id": "14n_office11_r008_23",
+      "material_label": "opaque plastic",
+      "rgb_pixel_std": 0.19822661578655243,
+      "albedo_pixel_std": 0.06365864723920822,
+      "pixel_std_delta": -0.1345679685473442,
+      "rgb_mean_color_std": 0.18567334115505219,
+      "albedo_mean_color_std": 0.05524153634905815,
+      "mean_color_std_delta": -0.13043180480599403
+    },
+    {
+      "region_id": "14n_office11_r029_23",
+      "material_label": "opaque plastic",
+      "rgb_pixel_std": 0.12251707911491394,
+      "albedo_pixel_std": 0.0731097012758255,
+      "pixel_std_delta": -0.04940737783908844,
+      "rgb_mean_color_std": 0.09363668411970139,
+      "albedo_mean_color_std": 0.05556289479136467,
+      "mean_color_std_delta": -0.038073789328336716
+    },
+    {
+      "region_id": "14n_office11_r040_32",
+      "material_label": "wood",
+      "rgb_pixel_std": 0.2762599289417267,
+      "albedo_pixel_std": 0.08851858973503113,
+      "pixel_std_delta": -0.18774133920669556,
+      "rgb_mean_color_std": 0.2670327126979828,
+      "albedo_mean_color_std": 0.07895644009113312,
+      "mean_color_std_delta": -0.18807627260684967
+    },
+    {
+      "region_id": "14n_office1_r006_21",
+      "material_label": "paper/tissue",
+      "rgb_pixel_std": 0.2533346712589264,
+      "albedo_pixel_std": 0.09758966416120529,
+      "pixel_std_delta": -0.1557450070977211,
+      "rgb_mean_color_std": 0.24269764125347137,
+      "albedo_mean_color_std": 0.07263699173927307,
+      "mean_color_std_delta": -0.1700606495141983
+    },
+    {
+      "region_id": "14n_office1_r047_23",
+      "material_label": "opaque plastic",
+      "rgb_pixel_std": 0.1713578999042511,
+      "albedo_pixel_std": 0.090098075568676,
+      "pixel_std_delta": -0.0812598243355751,
+      "rgb_mean_color_std": 0.15222106873989105,
+      "albedo_mean_color_std": 0.06275202333927155,
+      "mean_color_std_delta": -0.0894690454006195
+    },
+    {
+      "region_id": "14n_office7_r005_17",
+      "material_label": "metal",
+      "rgb_pixel_std": 0.1267087161540985,
+      "albedo_pixel_std": 0.04122484102845192,
+      "pixel_std_delta": -0.08548387512564659,
+      "rgb_mean_color_std": 0.11330454796552658,
+      "albedo_mean_color_std": 0.03817034885287285,
+      "mean_color_std_delta": -0.07513419911265373
+    },
+    {
+      "region_id": "14n_office7_r037_21",
+      "material_label": "paper/tissue",
+      "rgb_pixel_std": 0.2922537624835968,
+      "albedo_pixel_std": 0.10872794687747955,
+      "pixel_std_delta": -0.18352581560611725,
+      "rgb_mean_color_std": 0.28258439898490906,
+      "albedo_mean_color_std": 0.0907762348651886,
+      "mean_color_std_delta": -0.19180816411972046
+    },
+    {
+      "region_id": "14n_office7_r054_21",
+      "material_label": "paper/tissue",
+      "rgb_pixel_std": 0.28633981943130493,
+      "albedo_pixel_std": 0.1504477709531784,
+      "pixel_std_delta": -0.13589204847812653,
+      "rgb_mean_color_std": 0.2710783779621124,
+      "albedo_mean_color_std": 0.12219017744064331,
+      "mean_color_std_delta": -0.14888820052146912
+    },
+    {
+      "region_id": "elm_revis_kitchen14_r014_13",
+      "material_label": "granite/marble",
+      "rgb_pixel_std": 0.17185162007808685,
+      "albedo_pixel_std": 0.05475473403930664,
+      "pixel_std_delta": -0.11709688603878021,
+      "rgb_mean_color_std": 0.14323364198207855,
+      "albedo_mean_color_std": 0.023605769500136375,
+      "mean_color_std_delta": -0.11962787248194218
+    },
+    {
+      "region_id": "fulkerson_revis_dining5_r019_23",
+      "material_label": "opaque plastic",
+      "rgb_pixel_std": 0.22843921184539795,
+      "albedo_pixel_std": 0.19752952456474304,
+      "pixel_std_delta": -0.030909687280654907,
+      "rgb_mean_color_std": 0.21550749242305756,
+      "albedo_mean_color_std": 0.19284074008464813,
+      "mean_color_std_delta": -0.022666752338409424
+    },
+    {
+      "region_id": "fulkerson_revis_dining5_r043_12",
+      "material_label": "glass",
+      "rgb_pixel_std": 0.3350335359573364,
+      "albedo_pixel_std": 0.05206778272986412,
+      "pixel_std_delta": -0.2829657532274723,
+      "rgb_mean_color_std": 0.3282689154148102,
+      "albedo_mean_color_std": 0.01567339338362217,
+      "mean_color_std_delta": -0.312595522031188
+    },
+    {
+      "region_id": "fulkerson_revis_kitchen11_r003_13",
+      "material_label": "granite/marble",
+      "rgb_pixel_std": 0.1624901443719864,
+      "albedo_pixel_std": 0.08394869416952133,
+      "pixel_std_delta": -0.07854145020246506,
+      "rgb_mean_color_std": 0.15463505685329437,
+      "albedo_mean_color_std": 0.08106273412704468,
+      "mean_color_std_delta": -0.0735723227262497
+    },
+    {
+      "region_id": "fulkerson_revis_kitchen11_r027_17",
+      "material_label": "metal",
+      "rgb_pixel_std": 0.13620389997959137,
+      "albedo_pixel_std": 0.1095697209239006,
+      "pixel_std_delta": -0.026634179055690765,
+      "rgb_mean_color_std": 0.1036088690161705,
+      "albedo_mean_color_std": 0.05724424123764038,
+      "mean_color_std_delta": -0.04636462777853012
+    },
+    {
+      "region_id": "joy_bathroom6_r002_12",
+      "material_label": "glass",
+      "rgb_pixel_std": 0.24961267411708832,
+      "albedo_pixel_std": 0.13831262290477753,
+      "pixel_std_delta": -0.11130005121231079,
+      "rgb_mean_color_std": 0.24703718721866608,
+      "albedo_mean_color_std": 0.13826681673526764,
+      "mean_color_std_delta": -0.10877037048339844
+    },
+    {
+      "region_id": "joy_bathroom6_r020_27",
+      "material_label": "tile",
+      "rgb_pixel_std": 0.2527746558189392,
+      "albedo_pixel_std": 0.03412562608718872,
+      "pixel_std_delta": -0.2186490297317505,
+      "rgb_mean_color_std": 0.24895215034484863,
+      "albedo_mean_color_std": 0.03160705789923668,
+      "mean_color_std_delta": -0.21734509244561195
+    },
+    {
+      "region_id": "joy_bathroom9_r022_4",
+      "material_label": "ceramic",
+      "rgb_pixel_std": 0.1285618394613266,
+      "albedo_pixel_std": 0.058758754283189774,
+      "pixel_std_delta": -0.06980308517813683,
+      "rgb_mean_color_std": 0.11783912777900696,
+      "albedo_mean_color_std": 0.05770760774612427,
+      "mean_color_std_delta": -0.06013152003288269
+    },
+    {
+      "region_id": "joy_bathroom9_r048_27",
+      "material_label": "tile",
+      "rgb_pixel_std": 0.1769629716873169,
+      "albedo_pixel_std": 0.034167345613241196,
+      "pixel_std_delta": -0.1427956260740757,
+      "rgb_mean_color_std": 0.16448555886745453,
+      "albedo_mean_color_std": 0.026130864396691322,
+      "mean_color_std_delta": -0.1383546944707632
+    },
+    {
+      "region_id": "joy_bedroom14_r001_8",
+      "material_label": "fabric/cloth",
+      "rgb_pixel_std": 0.1994321197271347,
+      "albedo_pixel_std": 0.0734829306602478,
+      "pixel_std_delta": -0.1259491890668869,
+      "rgb_mean_color_std": 0.19011764228343964,
+      "albedo_mean_color_std": 0.05966416001319885,
+      "mean_color_std_delta": -0.13045348227024078
+    },
+    {
+      "region_id": "joy_bedroom14_r026_15",
+      "material_label": "leather",
+      "rgb_pixel_std": 0.2467590719461441,
+      "albedo_pixel_std": 0.11669646948575974,
+      "pixel_std_delta": -0.13006260246038437,
+      "rgb_mean_color_std": 0.228326678276062,
+      "albedo_mean_color_std": 0.11220405250787735,
+      "mean_color_std_delta": -0.11612262576818466
+    },
+    {
+      "region_id": "joy_bedroom14_r064_8",
+      "material_label": "fabric/cloth",
+      "rgb_pixel_std": 0.33435845375061035,
+      "albedo_pixel_std": 0.08251580595970154,
+      "pixel_std_delta": -0.2518426477909088,
+      "rgb_mean_color_std": 0.32768356800079346,
+      "albedo_mean_color_std": 0.05076872929930687,
+      "mean_color_std_delta": -0.2769148387014866
+    },
+    {
+      "region_id": "joy_bedroom16_r034_12",
+      "material_label": "glass",
+      "rgb_pixel_std": 0.2789987027645111,
+      "albedo_pixel_std": 0.09620240330696106,
+      "pixel_std_delta": -0.18279629945755005,
+      "rgb_mean_color_std": 0.26101621985435486,
+      "albedo_mean_color_std": 0.07390359044075012,
+      "mean_color_std_delta": -0.18711262941360474
+    },
+    {
+      "region_id": "joy_bedroom16_r063_8",
+      "material_label": "fabric/cloth",
+      "rgb_pixel_std": 0.14869490265846252,
+      "albedo_pixel_std": 0.032885417342185974,
+      "pixel_std_delta": -0.11580948531627655,
+      "rgb_mean_color_std": 0.13627202808856964,
+      "albedo_mean_color_std": 0.02611108310520649,
+      "mean_color_std_delta": -0.11016094498336315
+    },
+    {
+      "region_id": "joy_living12_r013_12",
+      "material_label": "glass",
+      "rgb_pixel_std": 0.17193228006362915,
+      "albedo_pixel_std": 0.11305104196071625,
+      "pixel_std_delta": -0.0588812381029129,
+      "rgb_mean_color_std": 0.1345176249742508,
+      "albedo_mean_color_std": 0.10581054538488388,
+      "mean_color_std_delta": -0.028707079589366913
+    },
+    {
+      "region_id": "joy_living12_r058_8",
+      "material_label": "fabric/cloth",
+      "rgb_pixel_std": 0.29054951667785645,
+      "albedo_pixel_std": 0.067257359623909,
+      "pixel_std_delta": -0.22329215705394745,
+      "rgb_mean_color_std": 0.2839706838130951,
+      "albedo_mean_color_std": 0.055508311837911606,
+      "mean_color_std_delta": -0.2284623719751835
+    },
+    {
+      "region_id": "kingston_bigbathroom6_r009_27",
+      "material_label": "tile",
+      "rgb_pixel_std": 0.1726454496383667,
+      "albedo_pixel_std": 0.016176845878362656,
+      "pixel_std_delta": -0.15646860376000404,
+      "rgb_mean_color_std": 0.1625961810350418,
+      "albedo_mean_color_std": 0.013158570975065231,
+      "mean_color_std_delta": -0.14943761005997658
+    },
+    {
+      "region_id": "kingston_bigbathroom6_r050_4",
+      "material_label": "ceramic",
+      "rgb_pixel_std": 0.07323188334703445,
+      "albedo_pixel_std": 0.031263675540685654,
+      "pixel_std_delta": -0.0419682078063488,
+      "rgb_mean_color_std": 0.06303498148918152,
+      "albedo_mean_color_std": 0.02834186516702175,
+      "mean_color_std_delta": -0.03469311632215977
+    },
+    {
+      "region_id": "kingston_dining7_r024_12",
+      "material_label": "glass",
+      "rgb_pixel_std": 0.12315758317708969,
+      "albedo_pixel_std": 0.06910473108291626,
+      "pixel_std_delta": -0.05405285209417343,
+      "rgb_mean_color_std": 0.0984359011054039,
+      "albedo_mean_color_std": 0.05388747528195381,
+      "mean_color_std_delta": -0.04454842582345009
+    },
+    {
+      "region_id": "kingston_dining7_r061_32",
+      "material_label": "wood",
+      "rgb_pixel_std": 0.22459743916988373,
+      "albedo_pixel_std": 0.11373574286699295,
+      "pixel_std_delta": -0.11086169630289078,
+      "rgb_mean_color_std": 0.19915418326854706,
+      "albedo_mean_color_std": 0.07897292822599411,
+      "mean_color_std_delta": -0.12018125504255295
+    },
+    {
+      "region_id": "kingston_floor1bath5_r021_32",
+      "material_label": "wood",
+      "rgb_pixel_std": 0.13768354058265686,
+      "albedo_pixel_std": 0.039198797196149826,
+      "pixel_std_delta": -0.09848474338650703,
+      "rgb_mean_color_std": 0.132835254073143,
+      "albedo_mean_color_std": 0.03070325404405594,
+      "mean_color_std_delta": -0.10213200002908707
+    },
+    {
+      "region_id": "kingston_floor1bath5_r059_17",
+      "material_label": "metal",
+      "rgb_pixel_std": 0.10851076990365982,
+      "albedo_pixel_std": 0.04556500166654587,
+      "pixel_std_delta": -0.06294576823711395,
+      "rgb_mean_color_std": 0.09018906950950623,
+      "albedo_mean_color_std": 0.03591204062104225,
+      "mean_color_std_delta": -0.054277028888463974
+    },
+    {
+      "region_id": "kingston_floor1bath5_r060_23",
+      "material_label": "opaque plastic",
+      "rgb_pixel_std": 0.13998480141162872,
+      "albedo_pixel_std": 0.0420168898999691,
+      "pixel_std_delta": -0.09796791151165962,
+      "rgb_mean_color_std": 0.1286371499300003,
+      "albedo_mean_color_std": 0.030682338401675224,
+      "mean_color_std_delta": -0.09795481152832508
+    },
+    {
+      "region_id": "kingston_living5_r028_21",
+      "material_label": "paper/tissue",
+      "rgb_pixel_std": 0.14673425257205963,
+      "albedo_pixel_std": 0.026278624311089516,
+      "pixel_std_delta": -0.12045562826097012,
+      "rgb_mean_color_std": 0.12081235647201538,
+      "albedo_mean_color_std": 0.01965896040201187,
+      "mean_color_std_delta": -0.10115339607000351
+    },
+    {
+      "region_id": "kingston_living5_r057_32",
+      "material_label": "wood",
+      "rgb_pixel_std": 0.23109376430511475,
+      "albedo_pixel_std": 0.06325425207614899,
+      "pixel_std_delta": -0.16783951222896576,
+      "rgb_mean_color_std": 0.21826080977916718,
+      "albedo_mean_color_std": 0.03680489957332611,
+      "mean_color_std_delta": -0.18145591020584106
+    },
+    {
+      "region_id": "kingston_living7_r010_32",
+      "material_label": "wood",
+      "rgb_pixel_std": 0.2161046862602234,
+      "albedo_pixel_std": 0.08162854611873627,
+      "pixel_std_delta": -0.13447614014148712,
+      "rgb_mean_color_std": 0.21004678308963776,
+      "albedo_mean_color_std": 0.07744014263153076,
+      "mean_color_std_delta": -0.132606640458107
+    },
+    {
+      "region_id": "kingston_living7_r046_21",
+      "material_label": "paper/tissue",
+      "rgb_pixel_std": 0.1972745805978775,
+      "albedo_pixel_std": 0.1087074801325798,
+      "pixel_std_delta": -0.0885671004652977,
+      "rgb_mean_color_std": 0.1760084480047226,
+      "albedo_mean_color_std": 0.09071607142686844,
+      "mean_color_std_delta": -0.08529237657785416
+    },
+    {
+      "region_id": "state_bigbathroom2_r012_8",
+      "material_label": "fabric/cloth",
+      "rgb_pixel_std": 0.2947038412094116,
+      "albedo_pixel_std": 0.14921937882900238,
+      "pixel_std_delta": -0.14548446238040924,
+      "rgb_mean_color_std": 0.283147394657135,
+      "albedo_mean_color_std": 0.14770115911960602,
+      "mean_color_std_delta": -0.135446235537529
+    },
+    {
+      "region_id": "state_bigbathroom2_r039_27",
+      "material_label": "tile",
+      "rgb_pixel_std": 0.2192070335149765,
+      "albedo_pixel_std": 0.04718519002199173,
+      "pixel_std_delta": -0.17202184349298477,
+      "rgb_mean_color_std": 0.2015264481306076,
+      "albedo_mean_color_std": 0.04335341975092888,
+      "mean_color_std_delta": -0.15817302837967873
+    },
+    {
+      "region_id": "state_bigbathroom2_r041_4",
+      "material_label": "ceramic",
+      "rgb_pixel_std": 0.11422478407621384,
+      "albedo_pixel_std": 0.08211386948823929,
+      "pixel_std_delta": -0.03211091458797455,
+      "rgb_mean_color_std": 0.10543183237314224,
+      "albedo_mean_color_std": 0.08097764104604721,
+      "mean_color_std_delta": -0.024454191327095032
+    },
+    {
+      "region_id": "state_kitchen2_r025_13",
+      "material_label": "granite/marble",
+      "rgb_pixel_std": 0.11324647814035416,
+      "albedo_pixel_std": 0.050043296068906784,
+      "pixel_std_delta": -0.06320318207144737,
+      "rgb_mean_color_std": 0.09674882888793945,
+      "albedo_mean_color_std": 0.028646046295762062,
+      "mean_color_std_delta": -0.06810278259217739
+    },
+    {
+      "region_id": "state_kitchen2_r053_17",
+      "material_label": "metal",
+      "rgb_pixel_std": 0.07221951335668564,
+      "albedo_pixel_std": 0.09626413136720657,
+      "pixel_std_delta": 0.024044618010520935,
+      "rgb_mean_color_std": 0.05366392433643341,
+      "albedo_mean_color_std": 0.07395107299089432,
+      "mean_color_std_delta": 0.020287148654460907
+    },
+    {
+      "region_id": "state_kitchen5_r016_17",
+      "material_label": "metal",
+      "rgb_pixel_std": 0.22566784918308258,
+      "albedo_pixel_std": 0.08555848151445389,
+      "pixel_std_delta": -0.1401093676686287,
+      "rgb_mean_color_std": 0.17364788055419922,
+      "albedo_mean_color_std": 0.05384707823395729,
+      "mean_color_std_delta": -0.11980080232024193
+    },
+    {
+      "region_id": "state_kitchen5_r049_32",
+      "material_label": "wood",
+      "rgb_pixel_std": 0.24532288312911987,
+      "albedo_pixel_std": 0.08903053402900696,
+      "pixel_std_delta": -0.15629234910011292,
+      "rgb_mean_color_std": 0.23182864487171173,
+      "albedo_mean_color_std": 0.05969849228858948,
+      "mean_color_std_delta": -0.17213015258312225
+    },
+    {
+      "region_id": "state_smallbathroom3_r000_4",
+      "material_label": "ceramic",
+      "rgb_pixel_std": 0.06912713497877121,
+      "albedo_pixel_std": 0.024253902956843376,
+      "pixel_std_delta": -0.044873232021927834,
+      "rgb_mean_color_std": 0.06300240010023117,
+      "albedo_mean_color_std": 0.015457953326404095,
+      "mean_color_std_delta": -0.047544446773827076
+    },
+    {
+      "region_id": "state_smallbathroom3_r033_8",
+      "material_label": "fabric/cloth",
+      "rgb_pixel_std": 0.25001800060272217,
+      "albedo_pixel_std": 0.1011895090341568,
+      "pixel_std_delta": -0.14882849156856537,
+      "rgb_mean_color_std": 0.24469681084156036,
+      "albedo_mean_color_std": 0.08501940965652466,
+      "mean_color_std_delta": -0.1596774011850357
+    },
+    {
+      "region_id": "state_smallbathroom3_r056_27",
+      "material_label": "tile",
+      "rgb_pixel_std": 0.242204949259758,
+      "albedo_pixel_std": 0.10041499137878418,
+      "pixel_std_delta": -0.14178995788097382,
+      "rgb_mean_color_std": 0.22810997068881989,
+      "albedo_mean_color_std": 0.0883503183722496,
+      "mean_color_std_delta": -0.13975965231657028
+    },
+    {
+      "region_id": "summer_bathroom8_r032_4",
+      "material_label": "ceramic",
+      "rgb_pixel_std": 0.20852850377559662,
+      "albedo_pixel_std": 0.05240222439169884,
+      "pixel_std_delta": -0.15612627938389778,
+      "rgb_mean_color_std": 0.19628684222698212,
+      "albedo_mean_color_std": 0.05052396282553673,
+      "mean_color_std_delta": -0.1457628794014454
+    },
+    {
+      "region_id": "summer_bathroom8_r042_8",
+      "material_label": "fabric/cloth",
+      "rgb_pixel_std": 0.15010271966457367,
+      "albedo_pixel_std": 0.051195912063121796,
+      "pixel_std_delta": -0.09890680760145187,
+      "rgb_mean_color_std": 0.13420242071151733,
+      "albedo_mean_color_std": 0.021130947396159172,
+      "mean_color_std_delta": -0.11307147331535816
+    },
+    {
+      "region_id": "west_bathroom4_r011_4",
+      "material_label": "ceramic",
+      "rgb_pixel_std": 0.1500682532787323,
+      "albedo_pixel_std": 0.012091029435396194,
+      "pixel_std_delta": -0.1379772238433361,
+      "rgb_mean_color_std": 0.14719663560390472,
+      "albedo_mean_color_std": 0.011991539038717747,
+      "mean_color_std_delta": -0.13520509656518698
+    },
+    {
+      "region_id": "west_bathroom4_r030_27",
+      "material_label": "tile",
+      "rgb_pixel_std": 0.21464397013187408,
+      "albedo_pixel_std": 0.03165891021490097,
+      "pixel_std_delta": -0.18298505991697311,
+      "rgb_mean_color_std": 0.20372025668621063,
+      "albedo_mean_color_std": 0.02849552594125271,
+      "mean_color_std_delta": -0.17522473074495792
+    },
+    {
+      "region_id": "willow_dining11_r023_8",
+      "material_label": "fabric/cloth",
+      "rgb_pixel_std": 0.10952044278383255,
+      "albedo_pixel_std": 0.06829983741044998,
+      "pixel_std_delta": -0.04122060537338257,
+      "rgb_mean_color_std": 0.0771944522857666,
+      "albedo_mean_color_std": 0.03970983624458313,
+      "mean_color_std_delta": -0.03748461604118347
+    },
+    {
+      "region_id": "willow_dining11_r044_15",
+      "material_label": "leather",
+      "rgb_pixel_std": 0.15123455226421356,
+      "albedo_pixel_std": 0.054578352719545364,
+      "pixel_std_delta": -0.0966561995446682,
+      "rgb_mean_color_std": 0.13768969476222992,
+      "albedo_mean_color_std": 0.048970043659210205,
+      "mean_color_std_delta": -0.08871965110301971
+    },
+    {
+      "region_id": "willow_dining11_r051_8",
+      "material_label": "fabric/cloth",
+      "rgb_pixel_std": 0.27189376950263977,
+      "albedo_pixel_std": 0.11489750444889069,
+      "pixel_std_delta": -0.15699626505374908,
+      "rgb_mean_color_std": 0.2585320770740509,
+      "albedo_mean_color_std": 0.10744479298591614,
+      "mean_color_std_delta": -0.15108728408813477
+    },
+    {
+      "region_id": "willow_dining12_r004_15",
+      "material_label": "leather",
+      "rgb_pixel_std": 0.2204526960849762,
+      "albedo_pixel_std": 0.09116249531507492,
+      "pixel_std_delta": -0.12929020076990128,
+      "rgb_mean_color_std": 0.20581930875778198,
+      "albedo_mean_color_std": 0.08371440321207047,
+      "mean_color_std_delta": -0.12210490554571152
+    },
+    {
+      "region_id": "willow_dining12_r062_8",
+      "material_label": "fabric/cloth",
+      "rgb_pixel_std": 0.27156445384025574,
+      "albedo_pixel_std": 0.07237078249454498,
+      "pixel_std_delta": -0.19919367134571075,
+      "rgb_mean_color_std": 0.2613523304462433,
+      "albedo_mean_color_std": 0.05422793701291084,
+      "mean_color_std_delta": -0.20712439343333244
+    },
+    {
+      "region_id": "willow_dining14_r035_15",
+      "material_label": "leather",
+      "rgb_pixel_std": 0.20913799107074738,
+      "albedo_pixel_std": 0.08641057461500168,
+      "pixel_std_delta": -0.1227274164557457,
+      "rgb_mean_color_std": 0.1933714896440506,
+      "albedo_mean_color_std": 0.07735639065504074,
+      "mean_color_std_delta": -0.11601509898900986
+    },
+    {
+      "region_id": "willow_dining14_r052_15",
+      "material_label": "leather",
+      "rgb_pixel_std": 0.08402379602193832,
+      "albedo_pixel_std": 0.03457822650671005,
+      "pixel_std_delta": -0.04944556951522827,
+      "rgb_mean_color_std": 0.07050403207540512,
+      "albedo_mean_color_std": 0.026474719867110252,
+      "mean_color_std_delta": -0.04402931220829487
+    },
+    {
+      "region_id": "willow_dining14_r055_23",
+      "material_label": "opaque plastic",
+      "rgb_pixel_std": 0.2836592495441437,
+      "albedo_pixel_std": 0.07652410119771957,
+      "pixel_std_delta": -0.2071351483464241,
+      "rgb_mean_color_std": 0.2696559727191925,
+      "albedo_mean_color_std": 0.045909617096185684,
+      "mean_color_std_delta": -0.22374635562300682
+    },
+    {
+      "region_id": "willow_dining8_r007_22",
+      "material_label": "clear plastic",
+      "rgb_pixel_std": 0.2933066189289093,
+      "albedo_pixel_std": 0.1505434662103653,
+      "pixel_std_delta": -0.142763152718544,
+      "rgb_mean_color_std": 0.27454742789268494,
+      "albedo_mean_color_std": 0.13291889429092407,
+      "mean_color_std_delta": -0.14162853360176086
+    },
+    {
+      "region_id": "willow_dining8_r065_8",
+      "material_label": "fabric/cloth",
+      "rgb_pixel_std": 0.2791154086589813,
+      "albedo_pixel_std": 0.14689235389232635,
+      "pixel_std_delta": -0.13222305476665497,
+      "rgb_mean_color_std": 0.25771039724349976,
+      "albedo_mean_color_std": 0.13362973928451538,
+      "mean_color_std_delta": -0.12408065795898438
+    },
+    {
+      "region_id": "willow_kitchen15_r038_23",
+      "material_label": "opaque plastic",
+      "rgb_pixel_std": 0.31142303347587585,
+      "albedo_pixel_std": 0.21807850897312164,
+      "pixel_std_delta": -0.09334452450275421,
+      "rgb_mean_color_std": 0.3031209409236908,
+      "albedo_mean_color_std": 0.21406106650829315,
+      "mean_color_std_delta": -0.08905987441539764
+    },
+    {
+      "region_id": "willow_kitchen15_r045_17",
+      "material_label": "metal",
+      "rgb_pixel_std": 0.11194738000631332,
+      "albedo_pixel_std": 0.08002948760986328,
+      "pixel_std_delta": -0.03191789239645004,
+      "rgb_mean_color_std": 0.08627545833587646,
+      "albedo_mean_color_std": 0.05237044766545296,
+      "mean_color_std_delta": -0.03390501067042351
+    },
+    {
+      "region_id": "willow_kitchen18_r031_32",
+      "material_label": "wood",
+      "rgb_pixel_std": 0.2381809502840042,
+      "albedo_pixel_std": 0.11948084086179733,
+      "pixel_std_delta": -0.11870010942220688,
+      "rgb_mean_color_std": 0.23030684888362885,
+      "albedo_mean_color_std": 0.10569527745246887,
+      "mean_color_std_delta": -0.12461157143115997
+    },
+    {
+      "region_id": "willow_kitchen18_r036_17",
+      "material_label": "metal",
+      "rgb_pixel_std": 0.15731051564216614,
+      "albedo_pixel_std": 0.097412109375,
+      "pixel_std_delta": -0.05989840626716614,
+      "rgb_mean_color_std": 0.15257537364959717,
+      "albedo_mean_color_std": 0.0899028554558754,
+      "mean_color_std_delta": -0.06267251819372177
+    },
+    {
+      "region_id": "willow_living18_r018_22",
+      "material_label": "clear plastic",
+      "rgb_pixel_std": 0.19078819453716278,
+      "albedo_pixel_std": 0.1731707900762558,
+      "pixel_std_delta": -0.017617404460906982,
+      "rgb_mean_color_std": 0.16475771367549896,
+      "albedo_mean_color_std": 0.17173247039318085,
+      "mean_color_std_delta": 0.006974756717681885
+    },
+    {
+      "region_id": "willow_living19_r015_15",
+      "material_label": "leather",
+      "rgb_pixel_std": 0.11047922074794769,
+      "albedo_pixel_std": 0.10048338025808334,
+      "pixel_std_delta": -0.00999584048986435,
+      "rgb_mean_color_std": 0.09049341082572937,
+      "albedo_mean_color_std": 0.09708140045404434,
+      "mean_color_std_delta": 0.006587989628314972
+    },
+    {
+      "region_id": "willow_living19_r017_21",
+      "material_label": "paper/tissue",
+      "rgb_pixel_std": 0.23597973585128784,
+      "albedo_pixel_std": 0.0950503870844841,
+      "pixel_std_delta": -0.14092934876680374,
+      "rgb_mean_color_std": 0.21637050807476044,
+      "albedo_mean_color_std": 0.04006863012909889,
+      "mean_color_std_delta": -0.17630187794566154
+    }
+  ]
+}

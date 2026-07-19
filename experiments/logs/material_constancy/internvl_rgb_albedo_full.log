@@ -1,0 +1,672 @@
+2026-07-19 01:19:12.918296: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1784395152.939656 2086822 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1784395152.946156 2086822 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1784395152.963766 2086822 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1784395152.963790 2086822 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1784395152.963793 2086822 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1784395152.963795 2086822 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2026-07-19 01:19:12.968690: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Device set to use cuda:0
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[1/330] state_smallbathroom3_r000_4_d02 gt=ceramic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[2/330] state_smallbathroom3_r000_4_d03 gt=ceramic pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[3/330] state_smallbathroom3_r000_4_d13 gt=ceramic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[4/330] state_smallbathroom3_r000_4_d19 gt=ceramic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[5/330] state_smallbathroom3_r000_4_d22 gt=ceramic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[6/330] joy_bedroom14_r001_8_d19 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[7/330] joy_bedroom14_r001_8_d24 gt=fabric/cloth pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[8/330] joy_bedroom14_r001_8_d07 gt=fabric/cloth pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[9/330] joy_bedroom14_r001_8_d15 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[10/330] joy_bedroom14_r001_8_d21 gt=fabric/cloth pred=opaque plastic raw='opaque plastic'
+You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[11/330] joy_bathroom6_r002_12_d22 gt=glass pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[12/330] joy_bathroom6_r002_12_d20 gt=glass pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[13/330] joy_bathroom6_r002_12_d21 gt=glass pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[14/330] joy_bathroom6_r002_12_d12 gt=glass pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[15/330] joy_bathroom6_r002_12_d18 gt=glass pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[16/330] fulkerson_revis_kitchen11_r003_13_d18 gt=granite/marble pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[17/330] fulkerson_revis_kitchen11_r003_13_d20 gt=granite/marble pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[18/330] fulkerson_revis_kitchen11_r003_13_d05 gt=granite/marble pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[19/330] fulkerson_revis_kitchen11_r003_13_d10 gt=granite/marble pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[20/330] fulkerson_revis_kitchen11_r003_13_d21 gt=granite/marble pred=granite/marble raw='granite/marble'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[21/330] willow_dining12_r004_15_d03 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[22/330] willow_dining12_r004_15_d21 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[23/330] willow_dining12_r004_15_d02 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[24/330] willow_dining12_r004_15_d24 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[25/330] willow_dining12_r004_15_d08 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[26/330] 14n_office7_r005_17_d03 gt=metal pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[27/330] 14n_office7_r005_17_d02 gt=metal pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[28/330] 14n_office7_r005_17_d20 gt=metal pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[29/330] 14n_office7_r005_17_d18 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[30/330] 14n_office7_r005_17_d22 gt=metal pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[31/330] 14n_office1_r006_21_d02 gt=paper/tissue pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[32/330] 14n_office1_r006_21_d03 gt=paper/tissue pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[33/330] 14n_office1_r006_21_d01 gt=paper/tissue pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[34/330] 14n_office1_r006_21_d22 gt=paper/tissue pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[35/330] 14n_office1_r006_21_d23 gt=paper/tissue pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[36/330] willow_dining8_r007_22_d03 gt=clear plastic pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[37/330] willow_dining8_r007_22_d21 gt=clear plastic pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[38/330] willow_dining8_r007_22_d10 gt=clear plastic pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[39/330] willow_dining8_r007_22_d02 gt=clear plastic pred=glass raw='glass'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[40/330] willow_dining8_r007_22_d06 gt=clear plastic pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[41/330] 14n_office11_r008_23_d03 gt=opaque plastic pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[42/330] 14n_office11_r008_23_d24 gt=opaque plastic pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[43/330] 14n_office11_r008_23_d02 gt=opaque plastic pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[44/330] 14n_office11_r008_23_d23 gt=opaque plastic pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[45/330] 14n_office11_r008_23_d21 gt=opaque plastic pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[46/330] kingston_bigbathroom6_r009_27_d22 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[47/330] kingston_bigbathroom6_r009_27_d20 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[48/330] kingston_bigbathroom6_r009_27_d24 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[49/330] kingston_bigbathroom6_r009_27_d21 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[50/330] kingston_bigbathroom6_r009_27_d03 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[51/330] kingston_living7_r010_32_d22 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[52/330] kingston_living7_r010_32_d20 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[53/330] kingston_living7_r010_32_d04 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[54/330] kingston_living7_r010_32_d21 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[55/330] kingston_living7_r010_32_d06 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[56/330] west_bathroom4_r011_4_d02 gt=ceramic pred=glass raw='glass'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[57/330] west_bathroom4_r011_4_d03 gt=ceramic pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[58/330] west_bathroom4_r011_4_d23 gt=ceramic pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[59/330] west_bathroom4_r011_4_d14 gt=ceramic pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[60/330] west_bathroom4_r011_4_d22 gt=ceramic pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[61/330] state_bigbathroom2_r012_8_d03 gt=fabric/cloth pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[62/330] state_bigbathroom2_r012_8_d02 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[63/330] state_bigbathroom2_r012_8_d21 gt=fabric/cloth pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[64/330] state_bigbathroom2_r012_8_d24 gt=fabric/cloth pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[65/330] state_bigbathroom2_r012_8_d23 gt=fabric/cloth pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[66/330] joy_living12_r013_12_d03 gt=glass pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[67/330] joy_living12_r013_12_d05 gt=glass pred=glass raw='glass'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[68/330] joy_living12_r013_12_d02 gt=glass pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[69/330] joy_living12_r013_12_d13 gt=glass pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[70/330] joy_living12_r013_12_d22 gt=glass pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[71/330] elm_revis_kitchen14_r014_13_d02 gt=granite/marble pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[72/330] elm_revis_kitchen14_r014_13_d03 gt=granite/marble pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[73/330] elm_revis_kitchen14_r014_13_d19 gt=granite/marble pred=granite/marble raw='granite/marble'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[74/330] elm_revis_kitchen14_r014_13_d20 gt=granite/marble pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[75/330] elm_revis_kitchen14_r014_13_d05 gt=granite/marble pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[76/330] willow_living19_r015_15_d24 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[77/330] willow_living19_r015_15_d15 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[78/330] willow_living19_r015_15_d16 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[79/330] willow_living19_r015_15_d02 gt=leather pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[80/330] willow_living19_r015_15_d01 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[81/330] state_kitchen5_r016_17_d18 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[82/330] state_kitchen5_r016_17_d02 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[83/330] state_kitchen5_r016_17_d14 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[84/330] state_kitchen5_r016_17_d24 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[85/330] state_kitchen5_r016_17_d10 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[86/330] willow_living19_r017_21_d03 gt=paper/tissue pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[87/330] willow_living19_r017_21_d02 gt=paper/tissue pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[88/330] willow_living19_r017_21_d22 gt=paper/tissue pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[89/330] willow_living19_r017_21_d12 gt=paper/tissue pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[90/330] willow_living19_r017_21_d15 gt=paper/tissue pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[91/330] willow_living18_r018_22_d24 gt=clear plastic pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[92/330] willow_living18_r018_22_d14 gt=clear plastic pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[93/330] willow_living18_r018_22_d02 gt=clear plastic pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[94/330] willow_living18_r018_22_d07 gt=clear plastic pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[95/330] willow_living18_r018_22_d20 gt=clear plastic pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[96/330] fulkerson_revis_dining5_r019_23_d22 gt=opaque plastic pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[97/330] fulkerson_revis_dining5_r019_23_d16 gt=opaque plastic pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[98/330] fulkerson_revis_dining5_r019_23_d09 gt=opaque plastic pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[99/330] fulkerson_revis_dining5_r019_23_d03 gt=opaque plastic pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[100/330] fulkerson_revis_dining5_r019_23_d23 gt=opaque plastic pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[101/330] joy_bathroom6_r020_27_d22 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[102/330] joy_bathroom6_r020_27_d02 gt=tile pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[103/330] joy_bathroom6_r020_27_d21 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[104/330] joy_bathroom6_r020_27_d11 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[105/330] joy_bathroom6_r020_27_d20 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[106/330] kingston_floor1bath5_r021_32_d22 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[107/330] kingston_floor1bath5_r021_32_d24 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[108/330] kingston_floor1bath5_r021_32_d23 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[109/330] kingston_floor1bath5_r021_32_d06 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[110/330] kingston_floor1bath5_r021_32_d02 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[111/330] joy_bathroom9_r022_4_d03 gt=ceramic pred=ceramic raw='ceramic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[112/330] joy_bathroom9_r022_4_d02 gt=ceramic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[113/330] joy_bathroom9_r022_4_d21 gt=ceramic pred=ceramic raw='ceramic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[114/330] joy_bathroom9_r022_4_d18 gt=ceramic pred=ceramic raw='ceramic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[115/330] joy_bathroom9_r022_4_d00 gt=ceramic pred=ceramic raw='ceramic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[116/330] willow_dining11_r023_8_d19 gt=fabric/cloth pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[117/330] willow_dining11_r023_8_d02 gt=fabric/cloth pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[118/330] willow_dining11_r023_8_d11 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[119/330] willow_dining11_r023_8_d24 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[120/330] willow_dining11_r023_8_d20 gt=fabric/cloth pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[121/330] kingston_dining7_r024_12_d22 gt=glass pred=glass raw='glass'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[122/330] kingston_dining7_r024_12_d21 gt=glass pred=glass raw='glass'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[123/330] kingston_dining7_r024_12_d24 gt=glass pred=glass raw='glass'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[124/330] kingston_dining7_r024_12_d02 gt=glass pred=glass raw='glass'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[125/330] kingston_dining7_r024_12_d13 gt=glass pred=glass raw='glass'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[126/330] state_kitchen2_r025_13_d23 gt=granite/marble pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[127/330] state_kitchen2_r025_13_d02 gt=granite/marble pred=granite/marble raw='granite/marble'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[128/330] state_kitchen2_r025_13_d14 gt=granite/marble pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[129/330] state_kitchen2_r025_13_d17 gt=granite/marble pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[130/330] state_kitchen2_r025_13_d20 gt=granite/marble pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[131/330] joy_bedroom14_r026_15_d02 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[132/330] joy_bedroom14_r026_15_d21 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[133/330] joy_bedroom14_r026_15_d22 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[134/330] joy_bedroom14_r026_15_d07 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[135/330] joy_bedroom14_r026_15_d05 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[136/330] fulkerson_revis_kitchen11_r027_17_d22 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[137/330] fulkerson_revis_kitchen11_r027_17_d02 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[138/330] fulkerson_revis_kitchen11_r027_17_d18 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[139/330] fulkerson_revis_kitchen11_r027_17_d13 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[140/330] fulkerson_revis_kitchen11_r027_17_d03 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[141/330] kingston_living5_r028_21_d22 gt=paper/tissue pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[142/330] kingston_living5_r028_21_d20 gt=paper/tissue pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[143/330] kingston_living5_r028_21_d11 gt=paper/tissue pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[144/330] kingston_living5_r028_21_d05 gt=paper/tissue pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[145/330] kingston_living5_r028_21_d03 gt=paper/tissue pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[146/330] 14n_office11_r029_23_d18 gt=opaque plastic pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[147/330] 14n_office11_r029_23_d20 gt=opaque plastic pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[148/330] 14n_office11_r029_23_d05 gt=opaque plastic pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[149/330] 14n_office11_r029_23_d21 gt=opaque plastic pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[150/330] 14n_office11_r029_23_d00 gt=opaque plastic pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[151/330] west_bathroom4_r030_27_d22 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[152/330] west_bathroom4_r030_27_d20 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[153/330] west_bathroom4_r030_27_d21 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[154/330] west_bathroom4_r030_27_d19 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[155/330] west_bathroom4_r030_27_d11 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[156/330] willow_kitchen18_r031_32_d03 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[157/330] willow_kitchen18_r031_32_d24 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[158/330] willow_kitchen18_r031_32_d06 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[159/330] willow_kitchen18_r031_32_d16 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[160/330] willow_kitchen18_r031_32_d18 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[161/330] summer_bathroom8_r032_4_d22 gt=ceramic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[162/330] summer_bathroom8_r032_4_d21 gt=ceramic pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[163/330] summer_bathroom8_r032_4_d20 gt=ceramic pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[164/330] summer_bathroom8_r032_4_d07 gt=ceramic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[165/330] summer_bathroom8_r032_4_d00 gt=ceramic pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[166/330] state_smallbathroom3_r033_8_d02 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[167/330] state_smallbathroom3_r033_8_d20 gt=fabric/cloth pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[168/330] state_smallbathroom3_r033_8_d18 gt=fabric/cloth pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[169/330] state_smallbathroom3_r033_8_d03 gt=fabric/cloth pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[170/330] state_smallbathroom3_r033_8_d00 gt=fabric/cloth pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[171/330] joy_bedroom16_r034_12_d24 gt=glass pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[172/330] joy_bedroom16_r034_12_d03 gt=glass pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[173/330] joy_bedroom16_r034_12_d21 gt=glass pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[174/330] joy_bedroom16_r034_12_d01 gt=glass pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[175/330] joy_bedroom16_r034_12_d02 gt=glass pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[176/330] willow_dining14_r035_15_d22 gt=leather pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[177/330] willow_dining14_r035_15_d20 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[178/330] willow_dining14_r035_15_d13 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[179/330] willow_dining14_r035_15_d19 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[180/330] willow_dining14_r035_15_d21 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[181/330] willow_kitchen18_r036_17_d03 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[182/330] willow_kitchen18_r036_17_d02 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[183/330] willow_kitchen18_r036_17_d13 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[184/330] willow_kitchen18_r036_17_d14 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[185/330] willow_kitchen18_r036_17_d11 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[186/330] 14n_office7_r037_21_d03 gt=paper/tissue pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[187/330] 14n_office7_r037_21_d24 gt=paper/tissue pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[188/330] 14n_office7_r037_21_d08 gt=paper/tissue pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[189/330] 14n_office7_r037_21_d05 gt=paper/tissue pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[190/330] 14n_office7_r037_21_d20 gt=paper/tissue pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[191/330] willow_kitchen15_r038_23_d03 gt=opaque plastic pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[192/330] willow_kitchen15_r038_23_d24 gt=opaque plastic pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[193/330] willow_kitchen15_r038_23_d15 gt=opaque plastic pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[194/330] willow_kitchen15_r038_23_d12 gt=opaque plastic pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[195/330] willow_kitchen15_r038_23_d02 gt=opaque plastic pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[196/330] state_bigbathroom2_r039_27_d22 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[197/330] state_bigbathroom2_r039_27_d21 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[198/330] state_bigbathroom2_r039_27_d02 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[199/330] state_bigbathroom2_r039_27_d24 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[200/330] state_bigbathroom2_r039_27_d20 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[201/330] 14n_office11_r040_32_d03 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[202/330] 14n_office11_r040_32_d02 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[203/330] 14n_office11_r040_32_d21 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[204/330] 14n_office11_r040_32_d00 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[205/330] 14n_office11_r040_32_d13 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[206/330] state_bigbathroom2_r041_4_d02 gt=ceramic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[207/330] state_bigbathroom2_r041_4_d03 gt=ceramic pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[208/330] state_bigbathroom2_r041_4_d23 gt=ceramic pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[209/330] state_bigbathroom2_r041_4_d04 gt=ceramic pred=glass raw='glass'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[210/330] state_bigbathroom2_r041_4_d21 gt=ceramic pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[211/330] summer_bathroom8_r042_8_d22 gt=fabric/cloth pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[212/330] summer_bathroom8_r042_8_d21 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[213/330] summer_bathroom8_r042_8_d11 gt=fabric/cloth pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[214/330] summer_bathroom8_r042_8_d03 gt=fabric/cloth pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[215/330] summer_bathroom8_r042_8_d01 gt=fabric/cloth pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[216/330] fulkerson_revis_dining5_r043_12_d03 gt=glass pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[217/330] fulkerson_revis_dining5_r043_12_d24 gt=glass pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[218/330] fulkerson_revis_dining5_r043_12_d20 gt=glass pred=glass raw='glass'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[219/330] fulkerson_revis_dining5_r043_12_d21 gt=glass pred=glass raw='glass'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[220/330] fulkerson_revis_dining5_r043_12_d22 gt=glass pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[221/330] willow_dining11_r044_15_d03 gt=leather pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[222/330] willow_dining11_r044_15_d02 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[223/330] willow_dining11_r044_15_d10 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[224/330] willow_dining11_r044_15_d22 gt=leather pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[225/330] willow_dining11_r044_15_d21 gt=leather pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[226/330] willow_kitchen15_r045_17_d02 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[227/330] willow_kitchen15_r045_17_d20 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[228/330] willow_kitchen15_r045_17_d14 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[229/330] willow_kitchen15_r045_17_d03 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[230/330] willow_kitchen15_r045_17_d24 gt=metal pred=glass raw='glass'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[231/330] kingston_living7_r046_21_d19 gt=paper/tissue pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[232/330] kingston_living7_r046_21_d02 gt=paper/tissue pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[233/330] kingston_living7_r046_21_d20 gt=paper/tissue pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[234/330] kingston_living7_r046_21_d23 gt=paper/tissue pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[235/330] kingston_living7_r046_21_d04 gt=paper/tissue pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[236/330] 14n_office1_r047_23_d02 gt=opaque plastic pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[237/330] 14n_office1_r047_23_d21 gt=opaque plastic pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[238/330] 14n_office1_r047_23_d05 gt=opaque plastic pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[239/330] 14n_office1_r047_23_d17 gt=opaque plastic pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[240/330] 14n_office1_r047_23_d20 gt=opaque plastic pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[241/330] joy_bathroom9_r048_27_d22 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[242/330] joy_bathroom9_r048_27_d20 gt=tile pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[243/330] joy_bathroom9_r048_27_d03 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[244/330] joy_bathroom9_r048_27_d07 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[245/330] joy_bathroom9_r048_27_d14 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[246/330] state_kitchen5_r049_32_d13 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[247/330] state_kitchen5_r049_32_d20 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[248/330] state_kitchen5_r049_32_d19 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[249/330] state_kitchen5_r049_32_d10 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[250/330] state_kitchen5_r049_32_d21 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[251/330] kingston_bigbathroom6_r050_4_d02 gt=ceramic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[252/330] kingston_bigbathroom6_r050_4_d03 gt=ceramic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[253/330] kingston_bigbathroom6_r050_4_d00 gt=ceramic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[254/330] kingston_bigbathroom6_r050_4_d21 gt=ceramic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[255/330] kingston_bigbathroom6_r050_4_d22 gt=ceramic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[256/330] willow_dining11_r051_8_d03 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[257/330] willow_dining11_r051_8_d02 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[258/330] willow_dining11_r051_8_d20 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[259/330] willow_dining11_r051_8_d21 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[260/330] willow_dining11_r051_8_d19 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[261/330] willow_dining14_r052_15_d22 gt=leather pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[262/330] willow_dining14_r052_15_d05 gt=leather pred=glass raw='glass'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[263/330] willow_dining14_r052_15_d20 gt=leather pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[264/330] willow_dining14_r052_15_d02 gt=leather pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[265/330] willow_dining14_r052_15_d19 gt=leather pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[266/330] state_kitchen2_r053_17_d23 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[267/330] state_kitchen2_r053_17_d03 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[268/330] state_kitchen2_r053_17_d15 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[269/330] state_kitchen2_r053_17_d17 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[270/330] state_kitchen2_r053_17_d02 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[271/330] 14n_office7_r054_21_d03 gt=paper/tissue pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[272/330] 14n_office7_r054_21_d02 gt=paper/tissue pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[273/330] 14n_office7_r054_21_d01 gt=paper/tissue pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[274/330] 14n_office7_r054_21_d13 gt=paper/tissue pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[275/330] 14n_office7_r054_21_d22 gt=paper/tissue pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[276/330] willow_dining14_r055_23_d03 gt=opaque plastic pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[277/330] willow_dining14_r055_23_d24 gt=opaque plastic pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[278/330] willow_dining14_r055_23_d06 gt=opaque plastic pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[279/330] willow_dining14_r055_23_d10 gt=opaque plastic pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[280/330] willow_dining14_r055_23_d19 gt=opaque plastic pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[281/330] state_smallbathroom3_r056_27_d22 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[282/330] state_smallbathroom3_r056_27_d21 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[283/330] state_smallbathroom3_r056_27_d02 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[284/330] state_smallbathroom3_r056_27_d20 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[285/330] state_smallbathroom3_r056_27_d01 gt=tile pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[286/330] kingston_living5_r057_32_d03 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[287/330] kingston_living5_r057_32_d02 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[288/330] kingston_living5_r057_32_d14 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[289/330] kingston_living5_r057_32_d20 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[290/330] kingston_living5_r057_32_d24 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[291/330] joy_living12_r058_8_d03 gt=fabric/cloth pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[292/330] joy_living12_r058_8_d02 gt=fabric/cloth pred=clear plastic raw='clear plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[293/330] joy_living12_r058_8_d01 gt=fabric/cloth pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[294/330] joy_living12_r058_8_d20 gt=fabric/cloth pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[295/330] joy_living12_r058_8_d21 gt=fabric/cloth pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[296/330] kingston_floor1bath5_r059_17_d03 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[297/330] kingston_floor1bath5_r059_17_d24 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[298/330] kingston_floor1bath5_r059_17_d21 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[299/330] kingston_floor1bath5_r059_17_d07 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[300/330] kingston_floor1bath5_r059_17_d02 gt=metal pred=metal raw='metal'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[301/330] kingston_floor1bath5_r060_23_d22 gt=opaque plastic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[302/330] kingston_floor1bath5_r060_23_d21 gt=opaque plastic pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[303/330] kingston_floor1bath5_r060_23_d20 gt=opaque plastic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[304/330] kingston_floor1bath5_r060_23_d12 gt=opaque plastic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[305/330] kingston_floor1bath5_r060_23_d18 gt=opaque plastic pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[306/330] kingston_dining7_r061_32_d03 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[307/330] kingston_dining7_r061_32_d02 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[308/330] kingston_dining7_r061_32_d13 gt=wood pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[309/330] kingston_dining7_r061_32_d21 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[310/330] kingston_dining7_r061_32_d20 gt=wood pred=wood raw='wood'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[311/330] willow_dining12_r062_8_d03 gt=fabric/cloth pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[312/330] willow_dining12_r062_8_d02 gt=fabric/cloth pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[313/330] willow_dining12_r062_8_d06 gt=fabric/cloth pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[314/330] willow_dining12_r062_8_d21 gt=fabric/cloth pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[315/330] willow_dining12_r062_8_d19 gt=fabric/cloth pred=paper/tissue raw='paper/tissue'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[316/330] joy_bedroom16_r063_8_d03 gt=fabric/cloth pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[317/330] joy_bedroom16_r063_8_d24 gt=fabric/cloth pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[318/330] joy_bedroom16_r063_8_d01 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[319/330] joy_bedroom16_r063_8_d15 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[320/330] joy_bedroom16_r063_8_d14 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[321/330] joy_bedroom14_r064_8_d02 gt=fabric/cloth pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[322/330] joy_bedroom14_r064_8_d03 gt=fabric/cloth pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[323/330] joy_bedroom14_r064_8_d19 gt=fabric/cloth pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[324/330] joy_bedroom14_r064_8_d22 gt=fabric/cloth pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[325/330] joy_bedroom14_r064_8_d24 gt=fabric/cloth pred=tile raw='tile'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[326/330] willow_dining8_r065_8_d18 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[327/330] willow_dining8_r065_8_d21 gt=fabric/cloth pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[328/330] willow_dining8_r065_8_d03 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[329/330] willow_dining8_r065_8_d07 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[330/330] willow_dining8_r065_8_d01 gt=fabric/cloth pred=fabric/cloth raw='fabric/cloth'

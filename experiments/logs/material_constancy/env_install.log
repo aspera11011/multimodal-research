@@ -1,0 +1,148 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting transformers<5,>=4.57
+  Downloading transformers-4.57.6-py3-none-any.whl (12.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 74.4 MB/s  0:00:00
+Collecting accelerate<2,>=1.0
+  Downloading accelerate-1.14.0-py3-none-any.whl (389 kB)
+Collecting modelscope<2,>=1.30
+  Downloading modelscope-1.38.1-py3-none-any.whl (6.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.0/6.0 MB 78.3 MB/s  0:00:00
+Collecting qwen-vl-utils>=0.0.14
+  Downloading qwen_vl_utils-0.0.14-py3-none-any.whl (8.1 kB)
+Collecting huggingface-hub<1,>=0.34
+  Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 30.7 MB/s  0:00:00
+Collecting safetensors>=0.4
+  Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+Collecting filelock (from transformers<5,>=4.57)
+  Downloading filelock-3.31.0-py3-none-any.whl (96 kB)
+Collecting numpy>=1.17 (from transformers<5,>=4.57)
+  Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.8/16.8 MB 67.5 MB/s  0:00:00
+Collecting packaging>=20.0 (from transformers<5,>=4.57)
+  Using cached packaging-26.2-py3-none-any.whl (100 kB)
+Collecting pyyaml>=5.1 (from transformers<5,>=4.57)
+  Downloading pyyaml-6.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (770 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 770.3/770.3 kB 60.3 MB/s  0:00:00
+Collecting regex!=2019.12.17 (from transformers<5,>=4.57)
+  Downloading regex-2026.7.10-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (794 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 794.2/794.2 kB 66.9 MB/s  0:00:00
+Collecting requests (from transformers<5,>=4.57)
+  Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Collecting tokenizers<=0.23.0,>=0.22.0 (from transformers<5,>=4.57)
+  Using cached tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+Collecting tqdm>=4.27 (from transformers<5,>=4.57)
+  Downloading tqdm-4.69.0-py3-none-any.whl (676 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 676.7/676.7 kB 52.0 MB/s  0:00:00
+Collecting psutil (from accelerate<2,>=1.0)
+  Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Collecting torch>=2.0.0 (from accelerate<2,>=1.0)
+  Downloading torch-2.13.0-cp310-cp310-manylinux_2_28_x86_64.whl (526.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 526.6/526.6 MB 40.2 MB/s  0:00:10
+Collecting modelscope-hub>=0.0.7 (from modelscope<2,>=1.30)
+  Downloading modelscope_hub-0.1.7-py3-none-any.whl (135 kB)
+Collecting setuptools (from modelscope<2,>=1.30)
+  Downloading setuptools-83.0.0-py3-none-any.whl (1.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 67.4 MB/s  0:00:00
+Collecting urllib3>=1.26 (from modelscope<2,>=1.30)
+  Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+Collecting fsspec>=2023.5.0 (from huggingface-hub<1,>=0.34)
+  Downloading fsspec-2026.6.0-py3-none-any.whl (203 kB)
+Collecting hf-xet<2.0.0,>=1.1.3 (from huggingface-hub<1,>=0.34)
+  Downloading hf_xet-1.5.2-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 82.0 MB/s  0:00:00
+Collecting typing-extensions>=3.7.4.3 (from huggingface-hub<1,>=0.34)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Collecting av (from qwen-vl-utils>=0.0.14)
+  Downloading av-17.1.0-cp310-cp310-manylinux_2_28_x86_64.whl (36.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 36.6/36.6 MB 48.4 MB/s  0:00:00
+Collecting pillow (from qwen-vl-utils>=0.0.14)
+  Downloading pillow-12.3.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 62.1 MB/s  0:00:00
+Collecting charset_normalizer<4,>=2 (from requests->transformers<5,>=4.57)
+  Downloading charset_normalizer-3.4.9-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (223 kB)
+Collecting idna<4,>=2.5 (from requests->transformers<5,>=4.57)
+  Downloading idna-3.18-py3-none-any.whl (65 kB)
+Collecting certifi>=2023.5.7 (from requests->transformers<5,>=4.57)
+  Downloading certifi-2026.6.17-py3-none-any.whl (133 kB)
+Collecting sympy>=1.13.3 (from torch>=2.0.0->accelerate<2,>=1.0)
+  Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 76.1 MB/s  0:00:00
+Collecting networkx>=2.5.1 (from torch>=2.0.0->accelerate<2,>=1.0)
+  Downloading networkx-3.4.2-py3-none-any.whl (1.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 49.2 MB/s  0:00:00
+Collecting jinja2 (from torch>=2.0.0->accelerate<2,>=1.0)
+  Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Collecting cuda-toolkit==13.0.3 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate<2,>=1.0)
+  Downloading cuda_toolkit-13.0.3.0-py2.py3-none-any.whl (2.5 kB)
+Collecting cuda-bindings<14,>=13.0.3 (from torch>=2.0.0->accelerate<2,>=1.0)
+  Downloading cuda_bindings-13.3.1-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (6.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.7/6.7 MB 74.0 MB/s  0:00:00
+Collecting nvidia-cudnn-cu13==9.20.0.48 (from torch>=2.0.0->accelerate<2,>=1.0)
+  Downloading nvidia_cudnn_cu13-9.20.0.48-py3-none-manylinux_2_27_x86_64.whl (366.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 366.2/366.2 MB 57.0 MB/s  0:00:06
+Collecting nvidia-cusparselt-cu13==0.8.1 (from torch>=2.0.0->accelerate<2,>=1.0)
+  Downloading nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl (170.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 170.1/170.1 MB 75.4 MB/s  0:00:02
+Collecting nvidia-nccl-cu13==2.29.7 (from torch>=2.0.0->accelerate<2,>=1.0)
+  Downloading nvidia_nccl_cu13-2.29.7-py3-none-manylinux_2_18_x86_64.whl (206.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.0/206.0 MB 82.8 MB/s  0:00:02
+Collecting nvidia-nvshmem-cu13==3.4.5 (from torch>=2.0.0->accelerate<2,>=1.0)
+  Using cached nvidia_nvshmem_cu13-3.4.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (60.4 MB)
+Collecting triton==3.7.1 (from torch>=2.0.0->accelerate<2,>=1.0)
+  Downloading triton-3.7.1-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (197.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 197.6/197.6 MB 60.2 MB/s  0:00:03
+Collecting nvidia-cuda-runtime==13.0.96.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate<2,>=1.0)
+  Using cached nvidia_cuda_runtime-13.0.96-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.2 MB)
+Collecting nvidia-cusparse==12.6.3.3.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate<2,>=1.0)
+  Using cached nvidia_cusparse-12.6.3.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (145.9 MB)
+Collecting nvidia-nvjitlink<14,>=13.0.88 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate<2,>=1.0)
+  Downloading nvidia_nvjitlink-13.3.33-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (40.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.7/40.7 MB 51.9 MB/s  0:00:00
+Collecting nvidia-cufile==1.15.1.6.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate<2,>=1.0)
+  Using cached nvidia_cufile-1.15.1.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.2 MB)
+Collecting nvidia-cublas==13.1.1.3.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate<2,>=1.0)
+  Downloading nvidia_cublas-13.1.1.3-py3-none-manylinux_2_27_x86_64.whl (423.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 423.1/423.1 MB 63.9 MB/s  0:00:06
+Collecting nvidia-cusolver==12.0.4.66.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate<2,>=1.0)
+  Using cached nvidia_cusolver-12.0.4.66-py3-none-manylinux_2_27_x86_64.whl (200.9 MB)
+Collecting nvidia-cuda-cupti==13.0.85.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate<2,>=1.0)
+  Using cached nvidia_cuda_cupti-13.0.85-py3-none-manylinux_2_25_x86_64.whl (10.7 MB)
+Collecting nvidia-cuda-nvrtc==13.0.88.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate<2,>=1.0)
+  Using cached nvidia_cuda_nvrtc-13.0.88-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (90.2 MB)
+Collecting nvidia-cufft==12.0.0.61.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate<2,>=1.0)
+  Using cached nvidia_cufft-12.0.0.61-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (214.1 MB)
+Collecting nvidia-curand==10.4.0.35.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate<2,>=1.0)
+  Using cached nvidia_curand-10.4.0.35-py3-none-manylinux_2_27_x86_64.whl (59.5 MB)
+Collecting nvidia-nvtx==13.0.85.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.0.0->accelerate<2,>=1.0)
+  Using cached nvidia_nvtx-13.0.85-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl (148 kB)
+Collecting cuda-pathfinder>=1.4.2 (from cuda-bindings<14,>=13.0.3->torch>=2.0.0->accelerate<2,>=1.0)
+  Downloading cuda_pathfinder-1.5.6-py3-none-any.whl (52 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch>=2.0.0->accelerate<2,>=1.0)
+  Using cached mpmath-1.3.0-py3-none-any.whl (536 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch>=2.0.0->accelerate<2,>=1.0)
+  Downloading markupsafe-3.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (20 kB)
+Installing collected packages: nvidia-cusparselt-cu13, mpmath, cuda-toolkit, urllib3, typing-extensions, triton, tqdm, sympy, setuptools, safetensors, regex, pyyaml, psutil, pillow, packaging, nvidia-nvtx, nvidia-nvshmem-cu13, nvidia-nvjitlink, nvidia-nccl-cu13, nvidia-curand, nvidia-cufile, nvidia-cuda-runtime, nvidia-cuda-nvrtc, nvidia-cuda-cupti, numpy, networkx, MarkupSafe, idna, hf-xet, fsspec, filelock, cuda-pathfinder, charset_normalizer, certifi, av, requests, nvidia-cusparse, nvidia-cufft, nvidia-cublas, jinja2, cuda-bindings, qwen-vl-utils, nvidia-cusolver, nvidia-cudnn-cu13, modelscope-hub, huggingface-hub, tokenizers, modelscope, transformers, torch, accelerate
+
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+datasets 3.4.0 requires fsspec[http]<=2024.12.0,>=2023.1.0, but you have fsspec 2026.6.0 which is incompatible.
+hpsv2 1.2.0 requires protobuf<4, but you have protobuf 5.29.6 which is incompatible.
+moviepy 2.2.1 requires pillow<12.0,>=9.2.0, but you have pillow 12.3.0 which is incompatible.
+open-clip-torch 3.3.0 requires timm>=1.0.17, but you have timm 0.6.13 which is incompatible.
+segmentation-models-pytorch 0.2.0 requires timm==0.4.12, but you have timm 0.6.13 which is incompatible.
+tensorflow 2.19.0 requires numpy<2.2.0,>=1.26.0, but you have numpy 2.2.6 which is incompatible.
+torchaudio 2.7.1+cu126 requires torch==2.7.1, but you have torch 2.13.0 which is incompatible.
+torchvision 0.22.1+cu126 requires torch==2.7.1, but you have torch 2.13.0 which is incompatible.
+Successfully installed MarkupSafe-3.0.3 accelerate-1.14.0 av-17.1.0 certifi-2026.6.17 charset_normalizer-3.4.9 cuda-bindings-13.3.1 cuda-pathfinder-1.5.6 cuda-toolkit-13.0.3.0 filelock-3.31.0 fsspec-2026.6.0 hf-xet-1.5.2 huggingface-hub-0.36.2 idna-3.18 jinja2-3.1.6 modelscope-1.38.1 modelscope-hub-0.1.7 mpmath-1.3.0 networkx-3.4.2 numpy-2.2.6 nvidia-cublas-13.1.1.3 nvidia-cuda-cupti-13.0.85 nvidia-cuda-nvrtc-13.0.88 nvidia-cuda-runtime-13.0.96 nvidia-cudnn-cu13-9.20.0.48 nvidia-cufft-12.0.0.61 nvidia-cufile-1.15.1.6 nvidia-curand-10.4.0.35 nvidia-cusolver-12.0.4.66 nvidia-cusparse-12.6.3.3 nvidia-cusparselt-cu13-0.8.1 nvidia-nccl-cu13-2.29.7 nvidia-nvjitlink-13.3.33 nvidia-nvshmem-cu13-3.4.5 nvidia-nvtx-13.0.85 packaging-26.2 pillow-12.3.0 psutil-7.2.2 pyyaml-6.0.3 qwen-vl-utils-0.0.14 regex-2026.7.10 requests-2.34.2 safetensors-0.8.0 setuptools-83.0.0 sympy-1.14.0 tokenizers-0.22.2 torch-2.13.0 tqdm-4.69.0 transformers-4.57.6 triton-3.7.1 typing-extensions-4.16.0 urllib3-2.7.0
+
+[notice] A new release of pip is available: 26.1.1 -> 26.1.2
+[notice] To update, run: pip install --upgrade pip
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting torchvision
+  Downloading torchvision-0.28.0-cp310-cp310-manylinux_2_28_x86_64.whl (7.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.7/7.7 MB 78.6 MB/s  0:00:00
+Installing collected packages: torchvision
+Successfully installed torchvision-0.28.0
+
+[notice] A new release of pip is available: 26.1.1 -> 26.1.2
+[notice] To update, run: pip install --upgrade pip

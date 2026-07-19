@@ -1,0 +1,301 @@
+{
+  "sample_count": 115,
+  "region_count": 23,
+  "scene_count": 10,
+  "sample_accuracy": 0.7043,
+  "macro_class_accuracy": 0.718,
+  "mean_region_accuracy": 0.7043,
+  "mean_region_accuracy_ci95": [
+    0.5565,
+    0.8348
+  ],
+  "mean_consistency": 0.8783,
+  "mean_consistency_ci95": [
+    0.8174,
+    0.9304
+  ],
+  "regions_with_any_flip_rate": 0.4783,
+  "regions_with_any_flip_ci95": [
+    0.2609,
+    0.6957
+  ],
+  "invalid_output_count": 0,
+  "class_accuracy": {
+    "ceramic": 0.0,
+    "fabric/cloth": 0.68,
+    "glass": 1.0,
+    "granite/marble": 0.8,
+    "leather": 0.9,
+    "metal": 0.5,
+    "opaque plastic": 0.6667,
+    "paper/tissue": 0.8,
+    "tile": 0.9,
+    "wood": 0.9333
+  },
+  "region_details": [
+    {
+      "region_id": "14n_office13_r011_17",
+      "scene": "14n_office13",
+      "material_label": "metal",
+      "accuracy": 0.0,
+      "consistency": 1.0,
+      "any_flip": false,
+      "prediction_counts": {
+        "tile": 5
+      }
+    },
+    {
+      "region_id": "14n_office13_r014_23",
+      "scene": "14n_office13",
+      "material_label": "opaque plastic",
+      "accuracy": 0.2,
+      "consistency": 0.8,
+      "any_flip": true,
+      "prediction_counts": {
+        "metal": 4,
+        "opaque plastic": 1
+      }
+    },
+    {
+      "region_id": "elm_2floor_bedroom8_r002_8",
+      "scene": "elm_2floor_bedroom8",
+      "material_label": "fabric/cloth",
+      "accuracy": 0.8,
+      "consistency": 0.8,
+      "any_flip": true,
+      "prediction_counts": {
+        "fabric/cloth": 4,
+        "tile": 1
+      }
+    },
+    {
+      "region_id": "elm_2floor_bedroom8_r006_8",
+      "scene": "elm_2floor_bedroom8",
+      "material_label": "fabric/cloth",
+      "accuracy": 0.4,
+      "consistency": 0.6,
+      "any_flip": true,
+      "prediction_counts": {
+        "fabric/cloth": 2,
+        "tile": 3
+      }
+    },
+    {
+      "region_id": "elm_2floor_bedroom8_r013_23",
+      "scene": "elm_2floor_bedroom8",
+      "material_label": "opaque plastic",
+      "accuracy": 1.0,
+      "consistency": 1.0,
+      "any_flip": false,
+      "prediction_counts": {
+        "opaque plastic": 5
+      }
+    },
+    {
+      "region_id": "elm_revis_kitchen14_r008_13",
+      "scene": "elm_revis_kitchen14",
+      "material_label": "granite/marble",
+      "accuracy": 0.8,
+      "consistency": 0.8,
+      "any_flip": true,
+      "prediction_counts": {
+        "granite/marble": 4,
+        "tile": 1
+      }
+    },
+    {
+      "region_id": "kingston_dining7_r007_12",
+      "scene": "kingston_dining7",
+      "material_label": "glass",
+      "accuracy": 1.0,
+      "consistency": 1.0,
+      "any_flip": false,
+      "prediction_counts": {
+        "glass": 5
+      }
+    },
+    {
+      "region_id": "kingston_dining7_r022_32",
+      "scene": "kingston_dining7",
+      "material_label": "wood",
+      "accuracy": 0.8,
+      "consistency": 0.8,
+      "any_flip": true,
+      "prediction_counts": {
+        "tile": 1,
+        "wood": 4
+      }
+    },
+    {
+      "region_id": "kingston_floor1bath5_r012_17",
+      "scene": "kingston_floor1bath5",
+      "material_label": "metal",
+      "accuracy": 1.0,
+      "consistency": 1.0,
+      "any_flip": false,
+      "prediction_counts": {
+        "metal": 5
+      }
+    },
+    {
+      "region_id": "kingston_floor1bath5_r015_23",
+      "scene": "kingston_floor1bath5",
+      "material_label": "opaque plastic",
+      "accuracy": 0.8,
+      "consistency": 0.8,
+      "any_flip": true,
+      "prediction_counts": {
+        "opaque plastic": 4,
+        "tile": 1
+      }
+    },
+    {
+      "region_id": "kingston_floor1bath5_r021_32",
+      "scene": "kingston_floor1bath5",
+      "material_label": "wood",
+      "accuracy": 1.0,
+      "consistency": 1.0,
+      "any_flip": false,
+      "prediction_counts": {
+        "wood": 5
+      }
+    },
+    {
+      "region_id": "kingston_living7_r017_21",
+      "scene": "kingston_living7",
+      "material_label": "paper/tissue",
+      "accuracy": 0.6,
+      "consistency": 0.6,
+      "any_flip": true,
+      "prediction_counts": {
+        "paper/tissue": 3,
+        "wood": 2
+      }
+    },
+    {
+      "region_id": "kingston_living7_r020_32",
+      "scene": "kingston_living7",
+      "material_label": "wood",
+      "accuracy": 1.0,
+      "consistency": 1.0,
+      "any_flip": false,
+      "prediction_counts": {
+        "wood": 5
+      }
+    },
+    {
+      "region_id": "state_bigbathroom2_r001_4",
+      "scene": "state_bigbathroom2",
+      "material_label": "ceramic",
+      "accuracy": 0.0,
+      "consistency": 1.0,
+      "any_flip": false,
+      "prediction_counts": {
+        "tile": 5
+      }
+    },
+    {
+      "region_id": "state_bigbathroom2_r003_8",
+      "scene": "state_bigbathroom2",
+      "material_label": "fabric/cloth",
+      "accuracy": 0.4,
+      "consistency": 0.6,
+      "any_flip": true,
+      "prediction_counts": {
+        "fabric/cloth": 2,
+        "tile": 3
+      }
+    },
+    {
+      "region_id": "state_bigbathroom2_r019_27",
+      "scene": "state_bigbathroom2",
+      "material_label": "tile",
+      "accuracy": 1.0,
+      "consistency": 1.0,
+      "any_flip": false,
+      "prediction_counts": {
+        "tile": 5
+      }
+    },
+    {
+      "region_id": "west_bathroom4_r000_4",
+      "scene": "west_bathroom4",
+      "material_label": "ceramic",
+      "accuracy": 0.0,
+      "consistency": 1.0,
+      "any_flip": false,
+      "prediction_counts": {
+        "tile": 5
+      }
+    },
+    {
+      "region_id": "west_bathroom4_r018_27",
+      "scene": "west_bathroom4",
+      "material_label": "tile",
+      "accuracy": 0.8,
+      "consistency": 0.8,
+      "any_flip": true,
+      "prediction_counts": {
+        "tile": 4,
+        "fabric/cloth": 1
+      }
+    },
+    {
+      "region_id": "willow_dining11_r004_8",
+      "scene": "willow_dining11",
+      "material_label": "fabric/cloth",
+      "accuracy": 0.8,
+      "consistency": 0.8,
+      "any_flip": true,
+      "prediction_counts": {
+        "fabric/cloth": 4,
+        "tile": 1
+      }
+    },
+    {
+      "region_id": "willow_dining11_r005_8",
+      "scene": "willow_dining11",
+      "material_label": "fabric/cloth",
+      "accuracy": 1.0,
+      "consistency": 1.0,
+      "any_flip": false,
+      "prediction_counts": {
+        "fabric/cloth": 5
+      }
+    },
+    {
+      "region_id": "willow_dining11_r010_15",
+      "scene": "willow_dining11",
+      "material_label": "leather",
+      "accuracy": 0.8,
+      "consistency": 0.8,
+      "any_flip": true,
+      "prediction_counts": {
+        "fabric/cloth": 1,
+        "leather": 4
+      }
+    },
+    {
+      "region_id": "willow_living19_r009_15",
+      "scene": "willow_living19",
+      "material_label": "leather",
+      "accuracy": 1.0,
+      "consistency": 1.0,
+      "any_flip": false,
+      "prediction_counts": {
+        "leather": 5
+      }
+    },
+    {
+      "region_id": "willow_living19_r016_21",
+      "scene": "willow_living19",
+      "material_label": "paper/tissue",
+      "accuracy": 1.0,
+      "consistency": 1.0,
+      "any_flip": false,
+      "prediction_counts": {
+        "paper/tissue": 5
+      }
+    }
+  ]
+}

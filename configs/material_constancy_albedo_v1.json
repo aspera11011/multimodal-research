@@ -1,0 +1,14 @@
+{
+  "experiment_id": "material_constancy_albedo_v1",
+  "source_manifest": "/home/xjy/multimodal-research/experiments/manifests/material_constancy_rgb_gate_v2/material_constancy_rgb_manifest.jsonl",
+  "model_id": "prs-eth/marigold-iid-appearance-v1-1",
+  "model_revision": "e7280a0a0fc5a0df0b36050882b3d8b77da22fd9",
+  "model_local_dir": "/home/xjy/multimodal-research/models/checkpoints/marigold-iid-appearance-v1-1",
+  "model_license": "RAIL++-M",
+  "num_inference_steps": 4,
+  "ensemble_size": 1,
+  "processing_resolution": 768,
+  "match_input_resolution": true,
+  "seed": 20260719,
+  "gpu": 3
+}

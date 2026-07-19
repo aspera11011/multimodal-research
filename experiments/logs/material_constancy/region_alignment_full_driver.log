@@ -1,0 +1,10 @@
+395, 23687, 0
+[329/330] willow_dining8_r065_8_d07 gt=fabric/cloth pred=leather raw='leather'
+[330/330] willow_dining8_r065_8_d01 gt=fabric/cloth pred=leather raw='leather'
+[329/330] willow_dining8_r065_8_d07 gt=fabric/cloth pred=leather raw='leather'
+[330/330] willow_dining8_r065_8_d01 gt=fabric/cloth pred=leather raw='leather'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[330/330] willow_dining8_r065_8_d01 gt=fabric/cloth pred=opaque plastic raw='opaque plastic'
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+[330/330] willow_dining8_r065_8_d01 gt=fabric/cloth pred=leather raw='leather'
+region-alignment full complete

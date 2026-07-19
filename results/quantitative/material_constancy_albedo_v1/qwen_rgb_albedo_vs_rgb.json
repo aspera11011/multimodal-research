@@ -1,0 +1,27 @@
+{
+  "model": "Qwen3-VL-2B",
+  "condition": "rgb_albedo",
+  "sample_count": 330,
+  "region_count": 66,
+  "baseline_sample_accuracy": 0.603,
+  "intervention_sample_accuracy": 0.6121,
+  "accuracy_delta": 0.0091,
+  "accuracy_delta_ci95": [
+    -0.0424,
+    0.0636
+  ],
+  "consistency_delta": 0.0061,
+  "consistency_delta_ci95": [
+    -0.0364,
+    0.0455
+  ],
+  "flip_rate_delta": -0.0758,
+  "flip_rate_delta_ci95": [
+    -0.1818,
+    0.0303
+  ],
+  "regions_accuracy_improved": 12,
+  "regions_accuracy_worsened": 13,
+  "regions_flip_resolved": 10,
+  "regions_newly_flipped": 5
+}

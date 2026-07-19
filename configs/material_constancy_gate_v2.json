@@ -1,0 +1,29 @@
+{
+  "experiment_id": "material_constancy_rgb_gate_v2",
+  "seed": 20260719,
+  "mip": 4,
+  "scene_count": 30,
+  "candidate_scenes_per_room_type": 30,
+  "room_types": [
+    "kitchen",
+    "bathroom",
+    "bedroom",
+    "living",
+    "office",
+    "dining"
+  ],
+  "target_material_ids": [4, 8, 12, 13, 15, 17, 21, 22, 23, 27, 32, 33, 35],
+  "min_component_area": 160,
+  "min_crop_purity": 0.82,
+  "crop_size": 96,
+  "min_regions": 50,
+  "max_regions": 80,
+  "max_regions_per_scene_class": 2,
+  "lights_per_region": 5,
+  "primary_model_id": "Qwen/Qwen3-VL-2B-Instruct",
+  "primary_model_local_dir": "/home/xjy/multimodal-research/models/checkpoints/Qwen3-VL-2B-Instruct",
+  "replication_model_id": "OpenGVLab/InternVL3_5-2B-HF",
+  "replication_model_local_dir": "/home/xjy/multimodal-research/models/checkpoints/InternVL3_5-2B-HF",
+  "gpu": 3,
+  "max_new_tokens": 24
+}

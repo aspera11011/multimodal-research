@@ -1,0 +1,45 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/urllib/request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/usr/lib/python3.10/http/client.py", line 1312, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1358, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1307, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1067, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.10/http/client.py", line 1005, in send
+    self.connect()
+  File "/usr/lib/python3.10/http/client.py", line 1484, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+  File "/usr/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/lib/python3.10/ssl.py", line 1100, in _create
+    self.do_handshake()
+  File "/usr/lib/python3.10/ssl.py", line 1371, in do_handshake
+    self._sslobj.do_handshake()
+TimeoutError: _ssl.c:990: The handshake operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/xjy/multimodal-research/scripts/build_material_constancy_pilot.py", line 270, in <module>
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
+  File "/home/xjy/multimodal-research/scripts/build_material_constancy_pilot.py", line 159, in main
+    
+  File "/home/xjy/multimodal-research/scripts/build_material_constancy_pilot.py", line 40, in fetch
+    with urllib.request.urlopen(url, timeout=90) as response:
+  File "/usr/lib/python3.10/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.10/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.10/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/usr/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.10/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "/usr/lib/python3.10/urllib/request.py", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error _ssl.c:990: The handshake operation timed out>

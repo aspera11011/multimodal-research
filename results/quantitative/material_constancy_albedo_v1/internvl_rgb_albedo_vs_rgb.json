@@ -1,0 +1,27 @@
+{
+  "model": "InternVL3.5-2B",
+  "condition": "rgb_albedo",
+  "sample_count": 330,
+  "region_count": 66,
+  "baseline_sample_accuracy": 0.5303,
+  "intervention_sample_accuracy": 0.5121,
+  "accuracy_delta": -0.0182,
+  "accuracy_delta_ci95": [
+    -0.0576,
+    0.0242
+  ],
+  "consistency_delta": 0.0,
+  "consistency_delta_ci95": [
+    -0.0364,
+    0.0364
+  ],
+  "flip_rate_delta": -0.0152,
+  "flip_rate_delta_ci95": [
+    -0.1061,
+    0.0758
+  ],
+  "regions_accuracy_improved": 9,
+  "regions_accuracy_worsened": 14,
+  "regions_flip_resolved": 5,
+  "regions_newly_flipped": 4
+}

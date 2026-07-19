@@ -1,0 +1,27 @@
+{
+  "model": "InternVL3.5-2B",
+  "condition": "shared_marker_vs_single_marker",
+  "sample_count": 330,
+  "region_count": 66,
+  "baseline_sample_accuracy": 0.4879,
+  "intervention_sample_accuracy": 0.5121,
+  "accuracy_delta": 0.0242,
+  "accuracy_delta_ci95": [
+    -0.0242,
+    0.0667
+  ],
+  "consistency_delta": 0.0121,
+  "consistency_delta_ci95": [
+    -0.0333,
+    0.0545
+  ],
+  "flip_rate_delta": -0.0606,
+  "flip_rate_delta_ci95": [
+    -0.1515,
+    0.0303
+  ],
+  "regions_accuracy_improved": 11,
+  "regions_accuracy_worsened": 4,
+  "regions_flip_resolved": 7,
+  "regions_newly_flipped": 3
+}

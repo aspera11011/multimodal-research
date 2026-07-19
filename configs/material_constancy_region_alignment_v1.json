@@ -1,0 +1,15 @@
+{
+  "experiment_id": "material_constancy_region_alignment_v1",
+  "source_manifest": "/home/xjy/multimodal-research/experiments/manifests/material_constancy_albedo_v1/material_constancy_albedo_manifest.jsonl",
+  "sample_count": 330,
+  "region_count": 66,
+  "conditions": {
+    "rgb_marked_albedo_unmarked": "The RGB image marks the target with a red rectangle; the aligned albedo is unmarked.",
+    "rgb_marked_albedo_marked": "The same red rectangle marks the target in both aligned images."
+  },
+  "primary_model": "/home/xjy/multimodal-research/models/checkpoints/Qwen3-VL-2B-Instruct",
+  "replication_model": "/home/xjy/multimodal-research/models/checkpoints/InternVL3_5-2B-HF",
+  "gpu": 3,
+  "seed": 20260719,
+  "max_new_tokens": 24
+}

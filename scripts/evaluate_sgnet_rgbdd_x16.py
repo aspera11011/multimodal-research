@@ -91,11 +91,12 @@ def prepare_tensors(rgb, depth, scale, shift_x, shift_y, device):
     rgb = np.ascontiguousarray(shifted_rgb / 255.0)
     depth_normalized = np.ascontiguousarray(depth / 255.0)
     height, width = depth_normalized.shape
-    low_resolution = np.asarray(
+    low_resolution = np.array(
         Image.fromarray(depth_normalized).resize(
             (width // scale, height // scale), Image.Resampling.BICUBIC
         ),
         dtype=np.float32,
+        copy=True,
     )
     guidance = torch.from_numpy(rgb.transpose(2, 0, 1)).unsqueeze(0).to(device)
     low_resolution = torch.from_numpy(low_resolution).unsqueeze(0).unsqueeze(0).to(device)

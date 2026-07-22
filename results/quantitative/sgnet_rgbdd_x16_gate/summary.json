@@ -13,7 +13,8 @@
   },
   "checkpoints": {
     "sgnet_sha256": "ceda2db815c9c001a6ee92c4b794f119f7f082c36c1fe552ebb1d7bb3041a340",
-    "c2pd_sha256": "e1de04e88e32d208fcbcaaae60837ae5033a14b042838df47cabd295d92c1385"
+    "c2pd_sha256": "e1de04e88e32d208fcbcaaae60837ae5033a14b042838df47cabd295d92c1385",
+    "sgnet_adapter_sha256": "0706c1cf997196fbe64861f58542c6eef3fbc95a3156f218cb915b57d7c58f9d"
   },
   "clean": {
     "sgnet": {
@@ -36,6 +37,13 @@
       "boundary_rmse": 10.345944,
       "flat_rmse": 1.824227,
       "false_edge_rate": 0.102372
+    },
+    "sgnet_misalignment_consistency_adapter": {
+      "rmse": 2.329957,
+      "mae": 0.905041,
+      "boundary_rmse": 6.809744,
+      "flat_rmse": 0.933652,
+      "false_edge_rate": 0.037142
     }
   },
   "relative_shift_change_percent": {
@@ -48,13 +56,28 @@
       "shift_x_1": {"rmse": 2.494, "boundary_rmse": 3.096, "false_edge_rate": 2.428},
       "shift_x_2": {"rmse": 5.624, "boundary_rmse": 6.525, "false_edge_rate": 22.838},
       "shift_x_4": {"rmse": 12.119, "boundary_rmse": 12.725, "false_edge_rate": 77.126}
+    },
+    "sgnet_misalignment_consistency_adapter": {
+      "shift_x_1": {"rmse": 1.635, "boundary_rmse": 2.136, "false_edge_rate": 4.545},
+      "shift_x_2": {"rmse": 5.542, "boundary_rmse": 6.473, "false_edge_rate": 29.807},
+      "shift_x_4": {"rmse": 12.168, "boundary_rmse": 12.692, "false_edge_rate": 91.590}
     }
+  },
+  "adapter_vs_sgnet_relative_change_percent": {
+    "clean": {"rmse": -0.239, "mae": 1.466, "boundary_rmse": -0.624, "flat_rmse": 2.210, "false_edge_rate": -14.245},
+    "shift_x_1": {"rmse": -0.477, "mae": 1.326, "boundary_rmse": -0.917, "flat_rmse": 2.179, "false_edge_rate": -13.122},
+    "shift_x_2": {"rmse": -0.915, "mae": 0.914, "boundary_rmse": -1.345, "flat_rmse": 1.751, "false_edge_rate": -11.888},
+    "shift_x_4": {"rmse": -1.204, "mae": 0.277, "boundary_rmse": -1.426, "flat_rmse": 0.261, "false_edge_rate": -10.658}
   },
   "decisions": {
     "sgnet_shift_finding": "pass",
     "c2pd_standalone_robustness": "modest_mixed_signal",
     "sgnet_c2pd_frozen_stitch": "no_go",
-    "long_training_started": false,
-    "next_module": "explicit_alignment_or_rgb_reliability_gating"
+    "raw_gradient_alignment": "no_go_clean_bias",
+    "trained_shift_calibrator": "no_go_random_level_accuracy",
+    "sgnet_misalignment_consistency_adapter": "retain_mixed_gain",
+    "pilot_training_completed": true,
+    "full_training_started": false,
+    "next_step": "add_clean_preservation_loss_then_repeat_pilot"
   }
 }

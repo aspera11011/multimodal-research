@@ -50,3 +50,11 @@ C2PD shows a modest mixed robustness advantage rather than a decisive win. At 2/
 Do not launch the original 501-epoch C2PD training. First test a frozen, fully traceable composition that passes the SGNet prediction through the pretrained C2PD deformation pipeline. Run one sample before the 405-pair clean/shift evaluation. Only if this composition improves the target robustness metrics should any refiner parameters be trained.
 
 The frozen composition passed the one-sample execution check but failed the 405-pair clean gate. RMSE increased from 2.3355 to 3.6605 (+56.73%), boundary RMSE from 6.8525 to 10.3459 (+50.98%), and false-edge rate from 4.33% to 10.24% (+136.36%). Stop this stitch before shift evaluation or training. Preserve the C2PD standalone comparison as evidence and move to an explicit alignment or RGB-reliability module.
+
+## Gate 3: alignment and consistency adaptation
+
+Raw RGB/depth gradient alignment failed because it also shifted clean pairs. A trained nine-class shift calibrator on 1,800 NYU pairs remained at random-level validation accuracy (10%), so explicit global shift estimation is No-Go for this input resolution.
+
+The next pilot freezes 82.43M SGNet parameters and trains only the early RGB branch plus first fusion bridge (4.19M parameters) on 200 NYU crops for one epoch. Random horizontal shifts in `[-4, 4]` are supervised with depth reconstruction and clean/shift output consistency. Training takes 115 seconds, peaks at 6.73 GB, has finite gradients, and produces a reloadable adapter checkpoint.
+
+On all 405 RGB-D-D pairs, the adapter significantly improves RMSE, boundary RMSE and false-edge rate over the frozen SGNet at clean and 1/2/4 px shifts; all paired-bootstrap 95% intervals exclude zero. False-edge rate falls by 10.66%–14.24%. MAE and flat-region RMSE become slightly worse, so retain the module as a positive pilot but do not call it a final model. The next loss revision must preserve the original clean output in flat regions before expanding the training budget.

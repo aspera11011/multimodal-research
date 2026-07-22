@@ -42,3 +42,11 @@ Proceed to a C2PD deformation/continuity audit only when at least two small-shif
 The implemented decision rule is intentionally stricter: at least two conditions must have paired-bootstrap 95% CI lower bounds above zero for both RMSE and boundary RMSE. `false_edge_rate` remains a supporting diagnostic rather than the sole pass criterion.
 
 After Gate 1 passes, evaluate the official C2PD 16× checkpoint under the same clean/shift protocol before modifying SGNet. Only consider transplanting CAPO/PCGD when C2PD shows a smaller paired degradation curve than SGNet; otherwise the source module has not demonstrated the target property.
+
+## Gate 2 result and next test
+
+C2PD shows a modest mixed robustness advantage rather than a decisive win. At 2/4 px, its relative RMSE degradation is 5.624%/12.119% versus SGNet's 6.262%/13.264%, and its false-edge increase is 22.838%/77.126% versus 26.335%/83.900%. At 1 px, C2PD's RMSE and boundary-RMSE degradation is slightly worse.
+
+Do not launch the original 501-epoch C2PD training. First test a frozen, fully traceable composition that passes the SGNet prediction through the pretrained C2PD deformation pipeline. Run one sample before the 405-pair clean/shift evaluation. Only if this composition improves the target robustness metrics should any refiner parameters be trained.
+
+The frozen composition passed the one-sample execution check but failed the 405-pair clean gate. RMSE increased from 2.3355 to 3.6605 (+56.73%), boundary RMSE from 6.8525 to 10.3459 (+50.98%), and false-edge rate from 4.33% to 10.24% (+136.36%). Stop this stitch before shift evaluation or training. Preserve the C2PD standalone comparison as evidence and move to an explicit alignment or RGB-reliability module.

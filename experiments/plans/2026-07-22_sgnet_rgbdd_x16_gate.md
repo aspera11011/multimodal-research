@@ -38,3 +38,5 @@ Run `--max-samples 1` first. Expand to 405 only after the sample name, tensor sh
 ## Gate
 
 Proceed to a C2PD deformation/continuity audit only when at least two small-shift levels consistently worsen RMSE, boundary RMSE or false-edge rate, with a paired-bootstrap 95% confidence interval excluding zero. Otherwise stop the misalignment route.
+
+The implemented decision rule is intentionally stricter: at least two conditions must have paired-bootstrap 95% CI lower bounds above zero for both RMSE and boundary RMSE. `false_edge_rate` remains a supporting diagnostic rather than the sole pass criterion.

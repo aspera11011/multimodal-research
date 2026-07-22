@@ -64,3 +64,11 @@ On all 405 RGB-D-D pairs, the adapter significantly improves RMSE, boundary RMSE
 The second 200-sample run uses the same split, seed, trainable 4.19M parameters and one-epoch budget. It adds a frozen SGNet clean teacher plus clean and flat-region reconstruction weights of 0.5 each. The run completes in 205.6 seconds, peaks at 13.30 GB and passes gradient/checkpoint checks.
 
 V2 partially reduces V1's clean MAE and flat-RMSE penalty, but the original SGNet still remains significantly better on both metrics. Against V1, V2 is significantly worse on RMSE, boundary RMSE and false-edge rate in every condition; at 2/4 px it also fails to improve MAE or flat RMSE. Mark V2 No-Go and retain V1 as the current pilot. Do not expand either run to full NYU yet; the next revision should use smaller preservation weights or a spatial gate instead of global clean/flat penalties.
+
+## Gate 5: spatial reliability gating
+
+Insert an 881-parameter spatial gate immediately before `bridge1` while freezing all 86.62M SGNet parameters. The gate receives normalized RGB-luminance gradient, upsampled LR-depth gradient and their absolute disagreement. Training-time GT depth generates a soft reliability target that suppresses RGB edges without GT-depth support; GT is not used by the inference path.
+
+The unregularized reconstruction objective alone remains near identity, while `identity_weight=0.01` collapses exactly to identity. Direct soft-target supervision produces a nontrivial gate (mean 0.789, mean spatial standard deviation 0.136) after 200 NYU samples and one epoch. Training takes 112.6 seconds, peaks at 6.60 GB and updates only 881 parameters.
+
+On 405 RGB-D-D pairs, the learned gate significantly improves all five metrics over SGNet and V1 at clean and 1/2/4 px shifts. Relative to SGNet, false-edge rate falls by 21.43%–21.95%, while RMSE improves by 1.01%–2.16%. Paired-bootstrap intervals exclude zero for every reported comparison. Learned spatial gating also beats an equal-mean constant gate on clean/4 px and a spatially shuffled gate on 4 px, showing that the gain is not explained by globally reducing RGB strength. Retain this module as the current positive pilot and move next to full NYU, multiple seeds, vertical/scale/texture perturbations and an official real-sensor protocol.

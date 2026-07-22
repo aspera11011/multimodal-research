@@ -16,6 +16,11 @@ def parse_args():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--bootstrap-samples", type=int, default=10000)
     parser.add_argument("--seed", type=int, default=20260722)
+    parser.add_argument(
+        "--conditions",
+        default=",".join(CONDITIONS),
+        help="Comma-separated condition directory names",
+    )
     return parser.parse_args()
 
 
@@ -49,7 +54,8 @@ def main():
         "seed": args.seed,
         "conditions": {},
     }
-    for condition in CONDITIONS:
+    conditions = [condition for condition in args.conditions.split(",") if condition]
+    for condition in conditions:
         baseline = load_records(args.baseline_root / condition / "per_sample.jsonl")
         candidate = load_records(args.candidate_root / condition / "per_sample.jsonl")
         if baseline.keys() != candidate.keys():

@@ -1,0 +1,224 @@
+import argparse
+import hashlib
+import json
+import platform
+import sys
+from pathlib import Path
+
+import numpy as np
+import torch
+from PIL import Image
+
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--sgnet-dir", type=Path, required=True)
+    parser.add_argument("--data-root", type=Path, required=True)
+    parser.add_argument("--checkpoint", type=Path, required=True)
+    parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--scale", type=int, default=16)
+    parser.add_argument("--num-feats", type=int, default=40)
+    parser.add_argument("--device", default="cuda:0")
+    parser.add_argument("--shift-x", type=int, default=0)
+    parser.add_argument("--shift-y", type=int, default=0)
+    parser.add_argument("--crop-border", type=int, default=6)
+    parser.add_argument("--depth-edge-threshold", type=float, default=2.0)
+    parser.add_argument("--rgb-edge-threshold", type=float, default=8.0)
+    parser.add_argument("--max-samples", type=int)
+    return parser.parse_args()
+
+
+def sha256(path):
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def shift_with_edge_padding(image, shift_x, shift_y):
+    if shift_x == 0 and shift_y == 0:
+        return image
+    height, width = image.shape[:2]
+    pad_x = abs(shift_x)
+    pad_y = abs(shift_y)
+    padding = ((pad_y, pad_y), (pad_x, pad_x), (0, 0))
+    padded = np.pad(image, padding, mode="edge")
+    start_x = pad_x - shift_x
+    start_y = pad_y - shift_y
+    return padded[start_y : start_y + height, start_x : start_x + width]
+
+
+def gradient_magnitude(image):
+    grad_y, grad_x = np.gradient(image.astype(np.float32))
+    return np.sqrt(grad_x * grad_x + grad_y * grad_y)
+
+
+def dilate(mask):
+    padded = np.pad(mask, ((1, 1), (1, 1)), mode="constant")
+    output = np.zeros_like(mask, dtype=bool)
+    for row_offset in range(3):
+        for column_offset in range(3):
+            output |= padded[
+                row_offset : row_offset + mask.shape[0],
+                column_offset : column_offset + mask.shape[1],
+            ]
+    return output
+
+
+def load_pairs(data_root, scale):
+    rgb_dir = data_root / "rgb"
+    depth_dir = data_root / "depth"
+    rgb_paths = {path.name: path for path in rgb_dir.iterdir() if path.is_file()}
+    depth_paths = {path.name: path for path in depth_dir.iterdir() if path.is_file()}
+    if rgb_paths.keys() != depth_paths.keys():
+        missing_rgb = sorted(depth_paths.keys() - rgb_paths.keys())
+        missing_depth = sorted(rgb_paths.keys() - depth_paths.keys())
+        raise RuntimeError(
+            f"Pair mismatch: missing_rgb={missing_rgb[:5]}, "
+            f"missing_depth={missing_depth[:5]}"
+        )
+    for name in sorted(rgb_paths):
+        rgb = np.asarray(Image.open(rgb_paths[name]).convert("RGB"), dtype=np.float32)
+        depth = np.asarray(Image.open(depth_paths[name]), dtype=np.float32)
+        height = depth.shape[0] - depth.shape[0] % scale
+        width = depth.shape[1] - depth.shape[1] % scale
+        yield name, rgb[:height, :width], depth[:height, :width]
+
+
+def prepare_tensors(rgb, depth, scale, shift_x, shift_y, device):
+    shifted_rgb = shift_with_edge_padding(rgb, shift_x, shift_y)
+    rgb = np.ascontiguousarray(shifted_rgb / 255.0)
+    depth_normalized = np.ascontiguousarray(depth / 255.0)
+    height, width = depth_normalized.shape
+    low_resolution = np.asarray(
+        Image.fromarray(depth_normalized).resize(
+            (width // scale, height // scale), Image.Resampling.BICUBIC
+        ),
+        dtype=np.float32,
+    )
+    guidance = torch.from_numpy(rgb.transpose(2, 0, 1)).unsqueeze(0).to(device)
+    low_resolution = torch.from_numpy(low_resolution).unsqueeze(0).unsqueeze(0).to(device)
+    return guidance.float(), low_resolution.float(), shifted_rgb
+
+
+def calculate_metrics(
+    prediction,
+    depth,
+    rgb,
+    crop_border,
+    depth_edge_threshold,
+    rgb_edge_threshold,
+):
+    prediction = np.clip(prediction, 0.0, 1.0) * 255.0
+    target = depth.astype(np.float32)
+    if crop_border:
+        prediction = prediction[crop_border:-crop_border, crop_border:-crop_border]
+        target = target[crop_border:-crop_border, crop_border:-crop_border]
+        rgb = rgb[crop_border:-crop_border, crop_border:-crop_border]
+    error = prediction - target
+    squared_error = error * error
+    target_edges = dilate(gradient_magnitude(target) > depth_edge_threshold)
+    prediction_edges = gradient_magnitude(prediction) > depth_edge_threshold
+    luminance = 0.299 * rgb[..., 0] + 0.587 * rgb[..., 1] + 0.114 * rgb[..., 2]
+    rgb_edges = gradient_magnitude(luminance) > rgb_edge_threshold
+    false_edges = prediction_edges & rgb_edges & ~target_edges
+    metrics = {
+        "rmse": float(np.sqrt(np.mean(squared_error))),
+        "mae": float(np.mean(np.abs(error))),
+        "boundary_rmse": float(np.sqrt(np.mean(squared_error[target_edges])))
+        if np.any(target_edges)
+        else None,
+        "flat_rmse": float(np.sqrt(np.mean(squared_error[~target_edges])))
+        if np.any(~target_edges)
+        else None,
+        "false_edge_rate": float(false_edges.sum() / max(prediction_edges.sum(), 1)),
+        "target_edge_pixels": int(target_edges.sum()),
+        "prediction_edge_pixels": int(prediction_edges.sum()),
+        "false_edge_pixels": int(false_edges.sum()),
+    }
+    return metrics
+
+
+def aggregate(records):
+    metric_names = ["rmse", "mae", "boundary_rmse", "flat_rmse", "false_edge_rate"]
+    output = {}
+    for name in metric_names:
+        values = [record[name] for record in records if record[name] is not None]
+        output[name] = {
+            "mean": float(np.mean(values)),
+            "std": float(np.std(values)),
+            "median": float(np.median(values)),
+        }
+    return output
+
+
+def main():
+    args = parse_args()
+    sys.path.insert(0, str(args.sgnet_dir.resolve()))
+    from models.SGNet import SGNet
+
+    if not args.checkpoint.is_file():
+        raise FileNotFoundError(args.checkpoint)
+    device = torch.device(args.device)
+    model = SGNet(num_feats=args.num_feats, kernel_size=3, scale=args.scale)
+    state_dict = torch.load(args.checkpoint, map_location=device)
+    model.load_state_dict(state_dict)
+    model.to(device).eval()
+
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    records = []
+    with torch.inference_mode():
+        for index, (name, rgb, depth) in enumerate(load_pairs(args.data_root, args.scale)):
+            if args.max_samples is not None and index >= args.max_samples:
+                break
+            guidance, low_resolution, shifted_rgb = prepare_tensors(
+                rgb, depth, args.scale, args.shift_x, args.shift_y, device
+            )
+            output = model((guidance, low_resolution))
+            prediction = output[0] if isinstance(output, (tuple, list)) else output
+            prediction = prediction[0, 0].detach().cpu().numpy()
+            metrics = calculate_metrics(
+                prediction,
+                depth,
+                shifted_rgb,
+                args.crop_border,
+                args.depth_edge_threshold,
+                args.rgb_edge_threshold,
+            )
+            records.append({"index": index, "name": name, **metrics})
+
+    with (args.output_dir / "per_sample.jsonl").open("w", encoding="utf-8") as handle:
+        for record in records:
+            handle.write(json.dumps(record, ensure_ascii=False) + "\n")
+    summary = {
+        "status": "completed",
+        "task": "rgb_guided_depth_super_resolution",
+        "dataset": "RGB-D-D/test2",
+        "scale": args.scale,
+        "sample_count": len(records),
+        "checkpoint_sha256": sha256(args.checkpoint),
+        "shift_x": args.shift_x,
+        "shift_y": args.shift_y,
+        "crop_border": args.crop_border,
+        "depth_edge_threshold": args.depth_edge_threshold,
+        "rgb_edge_threshold": args.rgb_edge_threshold,
+        "metrics_unit": "8-bit depth levels",
+        "metrics": aggregate(records),
+        "environment": {
+            "python": platform.python_version(),
+            "torch": torch.__version__,
+            "cuda_runtime": torch.version.cuda,
+            "device": str(device),
+            "device_name": torch.cuda.get_device_name(device)
+            if device.type == "cuda"
+            else "cpu",
+        },
+    }
+    with (args.output_dir / "summary.json").open("w", encoding="utf-8") as handle:
+        json.dump(summary, handle, ensure_ascii=False, indent=2)
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
+
+
+if __name__ == "__main__":
+    main()

@@ -21,6 +21,9 @@ def parse_args():
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--shift-x", type=int, default=0)
     parser.add_argument("--shift-y", type=int, default=0)
+    parser.add_argument("--rgb-scale", type=float, default=1.0)
+    parser.add_argument("--texture-amplitude", type=float, default=0.0)
+    parser.add_argument("--texture-block-size", type=int, default=4)
     parser.add_argument("--crop-border", type=int, default=6)
     parser.add_argument("--depth-edge-threshold", type=float, default=2.0)
     parser.add_argument("--rgb-edge-threshold", type=float, default=8.0)
@@ -47,6 +50,69 @@ def shift_with_edge_padding(image, shift_x, shift_y):
     start_x = pad_x - shift_x
     start_y = pad_y - shift_y
     return padded[start_y : start_y + height, start_x : start_x + width]
+
+
+def center_scale_with_edge_padding(image, scale):
+    if scale <= 0:
+        raise ValueError("rgb_scale must be positive")
+    if scale == 1.0:
+        return image
+    height, width = image.shape[:2]
+    resized_height = max(1, int(round(height * scale)))
+    resized_width = max(1, int(round(width * scale)))
+    resized = np.asarray(
+        Image.fromarray(np.clip(image, 0, 255).astype(np.uint8)).resize(
+            (resized_width, resized_height), Image.Resampling.BICUBIC
+        ),
+        dtype=np.float32,
+    )
+    if resized_height >= height and resized_width >= width:
+        start_y = (resized_height - height) // 2
+        start_x = (resized_width - width) // 2
+        return resized[start_y : start_y + height, start_x : start_x + width]
+    pad_top = max(0, (height - resized_height) // 2)
+    pad_bottom = max(0, height - resized_height - pad_top)
+    pad_left = max(0, (width - resized_width) // 2)
+    pad_right = max(0, width - resized_width - pad_left)
+    padded = np.pad(
+        resized,
+        ((pad_top, pad_bottom), (pad_left, pad_right), (0, 0)),
+        mode="edge",
+    )
+    start_y = max(0, (padded.shape[0] - height) // 2)
+    start_x = max(0, (padded.shape[1] - width) // 2)
+    return padded[start_y : start_y + height, start_x : start_x + width]
+
+
+def add_checkerboard_luminance_texture(image, amplitude, block_size):
+    if amplitude < 0:
+        raise ValueError("texture_amplitude must be non-negative")
+    if block_size <= 0:
+        raise ValueError("texture_block_size must be positive")
+    if amplitude == 0:
+        return image
+    height, width = image.shape[:2]
+    rows = np.arange(height)[:, None] // block_size
+    columns = np.arange(width)[None, :] // block_size
+    pattern = ((rows + columns) % 2).astype(np.float32) * 2.0 - 1.0
+    return np.clip(image + amplitude * pattern[..., None], 0.0, 255.0)
+
+
+def perturb_rgb(
+    image,
+    shift_x=0,
+    shift_y=0,
+    rgb_scale=1.0,
+    texture_amplitude=0.0,
+    texture_block_size=4,
+):
+    output = center_scale_with_edge_padding(image, rgb_scale)
+    output = shift_with_edge_padding(output, shift_x, shift_y)
+    return add_checkerboard_luminance_texture(
+        output,
+        texture_amplitude,
+        texture_block_size,
+    )
 
 
 def gradient_magnitude(image):
@@ -86,9 +152,26 @@ def load_pairs(data_root, scale):
         yield name, rgb[:height, :width], depth[:height, :width]
 
 
-def prepare_tensors(rgb, depth, scale, shift_x, shift_y, device):
-    shifted_rgb = shift_with_edge_padding(rgb, shift_x, shift_y)
-    rgb = np.ascontiguousarray(shifted_rgb / 255.0)
+def prepare_tensors(
+    rgb,
+    depth,
+    scale,
+    shift_x,
+    shift_y,
+    device,
+    rgb_scale=1.0,
+    texture_amplitude=0.0,
+    texture_block_size=4,
+):
+    perturbed_rgb = perturb_rgb(
+        rgb,
+        shift_x=shift_x,
+        shift_y=shift_y,
+        rgb_scale=rgb_scale,
+        texture_amplitude=texture_amplitude,
+        texture_block_size=texture_block_size,
+    )
+    rgb = np.ascontiguousarray(perturbed_rgb / 255.0)
     depth_normalized = np.ascontiguousarray(depth / 255.0)
     height, width = depth_normalized.shape
     low_resolution = np.array(
@@ -100,7 +183,7 @@ def prepare_tensors(rgb, depth, scale, shift_x, shift_y, device):
     )
     guidance = torch.from_numpy(rgb.transpose(2, 0, 1)).unsqueeze(0).to(device)
     low_resolution = torch.from_numpy(low_resolution).unsqueeze(0).unsqueeze(0).to(device)
-    return guidance.float(), low_resolution.float(), shifted_rgb
+    return guidance.float(), low_resolution.float(), perturbed_rgb
 
 
 def calculate_metrics(
@@ -174,7 +257,15 @@ def main():
             if args.max_samples is not None and index >= args.max_samples:
                 break
             guidance, low_resolution, shifted_rgb = prepare_tensors(
-                rgb, depth, args.scale, args.shift_x, args.shift_y, device
+                rgb,
+                depth,
+                args.scale,
+                args.shift_x,
+                args.shift_y,
+                device,
+                rgb_scale=args.rgb_scale,
+                texture_amplitude=args.texture_amplitude,
+                texture_block_size=args.texture_block_size,
             )
             output = model((guidance, low_resolution))
             prediction = output[0] if isinstance(output, (tuple, list)) else output
@@ -201,6 +292,9 @@ def main():
         "checkpoint_sha256": sha256(args.checkpoint),
         "shift_x": args.shift_x,
         "shift_y": args.shift_y,
+        "rgb_scale": args.rgb_scale,
+        "texture_amplitude": args.texture_amplitude,
+        "texture_block_size": args.texture_block_size,
         "crop_border": args.crop_border,
         "depth_edge_threshold": args.depth_edge_threshold,
         "rgb_edge_threshold": args.rgb_edge_threshold,

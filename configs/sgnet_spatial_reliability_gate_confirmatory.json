@@ -19,17 +19,36 @@
   "model": {
     "insertion_point": "before_bridge1_on_rgb2",
     "trainable_parameters": 881,
-    "frozen_sgnet": true
+    "frozen_sgnet": true,
+    "gate_applications": ["full", "high_frequency", "adaptive"],
+    "adaptive_frequency_threshold": 0.75,
+    "threshold_selection_seed": 20260723,
+    "threshold_confirmation_seeds": [20260724, 20260725]
   },
   "evaluation": {
     "dataset": "RGB-D-D/test2",
     "sample_count": 405,
     "horizontal_shifts": [0, 1, 2, 4],
     "vertical_shifts": [1, 2, 4],
+    "rgb_scales": [0.98, 1.02],
+    "checkerboard_texture": {
+      "amplitudes_8bit": [8, 16],
+      "block_size_pixels": 4
+    },
     "crop_border": 6,
     "metrics_unit": "8-bit depth levels",
     "bootstrap_samples_per_seed": 10000,
     "required_stability": "all seeds improve all five metrics in every condition"
+  },
+  "real_input_evaluation": {
+    "dataset": "RGB-D-D real test split",
+    "sample_count": 405,
+    "scale": 4,
+    "base_checkpoint": "SGNet_Real_R.pth",
+    "metrics_unit": "centimeters",
+    "direct_transfer_status": "no_go",
+    "real_domain_calibration_pilot_samples": 200,
+    "real_domain_calibration_status": "no_go"
   },
   "artifact_policy": {
     "commit_scripts_config_and_aggregate_summary": true,

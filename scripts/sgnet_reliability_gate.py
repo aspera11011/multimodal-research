@@ -96,7 +96,32 @@ class SGNetWithReliabilityGate(nn.Module):
             return gate.mean((2, 3), keepdim=True).expand_as(gate)
         raise ValueError(f"Unsupported gate mode: {mode}")
 
-    def forward(self, inputs, gate_mode="learned", return_gate=False):
+    def _apply_gate(self, features, gate, application, adaptive_threshold=0.75):
+        if application == "full":
+            return features * gate
+        if application in ("high_frequency", "adaptive"):
+            low_frequency = functional.avg_pool2d(
+                features,
+                kernel_size=3,
+                stride=1,
+                padding=1,
+            )
+            high_frequency_gated = low_frequency + gate * (features - low_frequency)
+            if application == "high_frequency":
+                return high_frequency_gated
+            full_gated = features * gate
+            use_high_frequency = gate.mean((1, 2, 3), keepdim=True) < adaptive_threshold
+            return torch.where(use_high_frequency, high_frequency_gated, full_gated)
+        raise ValueError(f"Unsupported gate application: {application}")
+
+    def forward(
+        self,
+        inputs,
+        gate_mode="learned",
+        gate_application="full",
+        adaptive_threshold=0.75,
+        return_gate=False,
+    ):
         image, depth = inputs
         base = self.base_model
 
@@ -112,7 +137,13 @@ class SGNetWithReliabilityGate(nn.Module):
             self.reliability_gate(image, depth),
             gate_mode,
         )
-        ca1_in, r1 = base.bridge1(dp1_, rgb2 * gate)
+        gated_rgb2 = self._apply_gate(
+            rgb2,
+            gate,
+            gate_application,
+            adaptive_threshold=adaptive_threshold,
+        )
+        ca1_in, r1 = base.bridge1(dp1_, gated_rgb2)
 
         dp2 = base.dp_rg2(torch.cat([dp1, ca1_in + dp_in], 1))
         dp2_ = base.c_grad2(torch.cat([dp2, grad_d4], dim=1))

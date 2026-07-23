@@ -1,0 +1,39 @@
+{
+  "experiment_id": "20260723_sgnet_spatial_reliability_gate_full_nyu_multiseed",
+  "task": "rgb_guided_depth_super_resolution",
+  "base_method": "SGNet",
+  "training": {
+    "dataset": "NYU_v2_train",
+    "selected_samples": 2000,
+    "epochs": 1,
+    "batch_size": 1,
+    "learning_rate": 0.001,
+    "random_horizontal_shift_range": [-4, 4],
+    "consistency_weight": 0.5,
+    "identity_weight": 0.0,
+    "gate_supervision_weight": 1.0,
+    "minimum_reliability": 0.2,
+    "seeds": [20260723, 20260724, 20260725],
+    "parallel_gpu_indices": [0, 2, 3]
+  },
+  "model": {
+    "insertion_point": "before_bridge1_on_rgb2",
+    "trainable_parameters": 881,
+    "frozen_sgnet": true
+  },
+  "evaluation": {
+    "dataset": "RGB-D-D/test2",
+    "sample_count": 405,
+    "horizontal_shifts": [0, 1, 2, 4],
+    "vertical_shifts": [1, 2, 4],
+    "crop_border": 6,
+    "metrics_unit": "8-bit depth levels",
+    "bootstrap_samples_per_seed": 10000,
+    "required_stability": "all seeds improve all five metrics in every condition"
+  },
+  "artifact_policy": {
+    "commit_scripts_config_and_aggregate_summary": true,
+    "commit_checkpoints": false,
+    "commit_per_sample_outputs": false
+  }
+}

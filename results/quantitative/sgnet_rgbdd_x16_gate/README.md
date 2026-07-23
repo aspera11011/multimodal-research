@@ -16,6 +16,7 @@ This directory contains aggregate, reviewable results only. Checkpoints, complet
 - `relative_hard_confirmation.json`: locked clean-relative hard-threshold confirmation on two held-out checkpoints; No-Go despite improved routing agreement.
 - `ramp_routing_development.json`: one-sided dead-zone ramp development gate; all widths fail.
 - `learned_router_pilot.json`: image-holdout logistic-router pilot and checker8 oracle upper bound; not a formal trained result.
+- `nyu_branch_router_pilot.json`: frozen-SGNet NYU 200/100 branch-router training gate; both fixed objectives are No-Go.
 
 ## Interpretation boundary
 
@@ -30,3 +31,5 @@ Held-out texture types give a narrower positive result. RMSE, boundary RMSE, and
 Three parameter-free routing repairs were then reviewed under a fixed development/confirmation protocol. Sigmoid soft routing damages clean false-edge performance, clean-relative hard calibration improves cross-seed agreement but not sinusoidal reconstruction, and a one-sided ramp degrades checkerboard-8 metrics. All are retained as No-Go evidence; the original absolute-threshold hard-adaptive router remains the current best synthetic-protocol method.
 
 An oracle gate shows checker8 still has headroom, but a fixed 200/205-image RGB-D-D logistic pilot does not meet the hard-routing preservation gate. This is only a feasibility diagnosis; any formal learned router must be trained on NYU and evaluated on RGB-D-D as an external dataset.
+
+The subsequent NYU 200-train/100-validation router gate also fails. Both label objectives improve reconstruction metrics, but clean false-edge rate regresses versus hard routing. The pilot is not expanded to 2,000 NYU samples, and no router checkpoint is published.

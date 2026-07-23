@@ -46,10 +46,19 @@ def parse_args():
     )
     parser.add_argument(
         "--gate-application",
-        choices=("full", "high_frequency", "adaptive"),
+        choices=(
+            "full",
+            "high_frequency",
+            "adaptive",
+            "soft_adaptive",
+            "ramp_adaptive",
+        ),
         default="full",
     )
     parser.add_argument("--adaptive-threshold", type=float, default=0.75)
+    parser.add_argument("--adaptive-temperature", type=float, default=0.01)
+    parser.add_argument("--gate-reference-mean", type=float)
+    parser.add_argument("--reference-drop-threshold", type=float)
     parser.add_argument("--crop-border", type=int, default=6)
     parser.add_argument("--depth-edge-threshold", type=float, default=2.0)
     parser.add_argument("--rgb-edge-threshold", type=float, default=8.0)
@@ -59,6 +68,16 @@ def parse_args():
 
 def main():
     args = parse_args()
+    reference_values = (args.gate_reference_mean, args.reference_drop_threshold)
+    if (reference_values[0] is None) != (reference_values[1] is None):
+        raise ValueError(
+            "gate_reference_mean and reference_drop_threshold must be used together"
+        )
+    effective_threshold = args.adaptive_threshold
+    if args.gate_reference_mean is not None:
+        effective_threshold = (
+            args.gate_reference_mean - args.reference_drop_threshold
+        )
     sys.path.insert(0, str(args.sgnet_dir.resolve()))
     from models.SGNet import SGNet
 
@@ -99,7 +118,8 @@ def main():
                 (guidance, low_resolution),
                 gate_mode=args.gate_mode,
                 gate_application=args.gate_application,
-                adaptive_threshold=args.adaptive_threshold,
+                adaptive_threshold=effective_threshold,
+                adaptive_temperature=args.adaptive_temperature,
                 return_gate=True,
             )
             prediction = prediction[0, 0].detach().cpu().numpy()
@@ -111,20 +131,42 @@ def main():
                 args.depth_edge_threshold,
                 args.rgb_edge_threshold,
             )
+            gate_mean = float(gate.mean().item())
+            if args.gate_application == "high_frequency":
+                high_frequency_weight = 1.0
+            elif args.gate_application == "soft_adaptive":
+                high_frequency_weight = float(
+                    1.0
+                    / (
+                        1.0
+                        + np.exp(
+                            (gate_mean - effective_threshold)
+                            / args.adaptive_temperature
+                        )
+                    )
+                )
+            elif args.gate_application == "ramp_adaptive":
+                high_frequency_weight = float(
+                    np.clip(
+                        (effective_threshold - gate_mean)
+                        / args.adaptive_temperature,
+                        0.0,
+                        1.0,
+                    )
+                )
+            elif args.gate_application == "adaptive":
+                high_frequency_weight = float(gate_mean < effective_threshold)
+            else:
+                high_frequency_weight = 0.0
             records.append(
                 {
                     "index": index,
                     "name": name,
-                    "gate_mean": float(gate.mean().item()),
+                    "gate_mean": gate_mean,
                     "gate_std": float(gate.std().item()),
                     "gate_suppressed_fraction": float((gate < 0.9).float().mean().item()),
-                    "high_frequency_selected": bool(
-                        args.gate_application == "high_frequency"
-                        or (
-                            args.gate_application == "adaptive"
-                            and gate.mean().item() < args.adaptive_threshold
-                        )
-                    ),
+                    "high_frequency_weight": high_frequency_weight,
+                    "high_frequency_selected": bool(high_frequency_weight >= 0.5),
                     **metrics,
                 }
             )
@@ -139,6 +181,10 @@ def main():
         "gate_mode": args.gate_mode,
         "gate_application": args.gate_application,
         "adaptive_threshold": args.adaptive_threshold,
+        "effective_adaptive_threshold": effective_threshold,
+        "adaptive_temperature": args.adaptive_temperature,
+        "gate_reference_mean": args.gate_reference_mean,
+        "reference_drop_threshold": args.reference_drop_threshold,
         "dataset": "RGB-D-D/test2",
         "scale": args.scale,
         "sample_count": len(records),
@@ -166,6 +212,9 @@ def main():
             ),
             "high_frequency_selection_fraction": float(
                 np.mean([record["high_frequency_selected"] for record in records])
+            ),
+            "high_frequency_weight_mean": float(
+                np.mean([record["high_frequency_weight"] for record in records])
             ),
         },
         "environment": {

@@ -12,6 +12,10 @@ This directory contains aggregate, reviewable results only. Checkpoints, complet
 - `qualitative_examples_summary.json`: selected success, branch-selection, and failure examples; generated panels remain local-only.
 - `rgbdd_real_protocol_summary.json`: RGB-D-D real-input 4× baseline, direct-transfer failure, and 200-sample real-domain calibration failure.
 - `unseen_texture_generalization.json`: fixed-protocol sinusoidal/noise generalization, three-seed paired bootstrap, and branch-selection diagnostics.
+- `soft_routing_development.json`: pre-registered 100-sample sigmoid-soft routing development gate; all temperatures fail.
+- `relative_hard_confirmation.json`: locked clean-relative hard-threshold confirmation on two held-out checkpoints; No-Go despite improved routing agreement.
+- `ramp_routing_development.json`: one-sided dead-zone ramp development gate; all widths fail.
+- `learned_router_pilot.json`: image-holdout logistic-router pilot and checker8 oracle upper bound; not a formal trained result.
 
 ## Interpretation boundary
 
@@ -22,3 +26,7 @@ The same claim does not extend to real sensor input. Direct transfer to `SGNet_R
 The native real-domain gate pilot, trained from identity initialization on 200 real training pairs, also performs worse on all five metrics. Real-domain gate training is therefore stopped pending a redesigned normalization or objective.
 
 Held-out texture types give a narrower positive result. RMSE, boundary RMSE, and false-edge rate improve for a majority of seeds in all four sinusoidal/noise conditions, and stronger texture always increases high-frequency routing. However, only 34 of 60 per-seed metric comparisons are significant and the sinusoidal amplitude-8 condition worsens mean MAE/flat RMSE. This supports core edge robustness beyond checkerboards, not universal reconstruction improvement. Post-hoc diagnostics identify low cross-seed routing agreement at amplitude 8; they are not used to retune the reported threshold.
+
+Three parameter-free routing repairs were then reviewed under a fixed development/confirmation protocol. Sigmoid soft routing damages clean false-edge performance, clean-relative hard calibration improves cross-seed agreement but not sinusoidal reconstruction, and a one-sided ramp degrades checkerboard-8 metrics. All are retained as No-Go evidence; the original absolute-threshold hard-adaptive router remains the current best synthetic-protocol method.
+
+An oracle gate shows checker8 still has headroom, but a fixed 200/205-image RGB-D-D logistic pilot does not meet the hard-routing preservation gate. This is only a feasibility diagnosis; any formal learned router must be trained on NYU and evaluated on RGB-D-D as an external dataset.

@@ -96,10 +96,22 @@ class SGNetWithReliabilityGate(nn.Module):
             return gate.mean((2, 3), keepdim=True).expand_as(gate)
         raise ValueError(f"Unsupported gate mode: {mode}")
 
-    def _apply_gate(self, features, gate, application, adaptive_threshold=0.75):
+    def _apply_gate(
+        self,
+        features,
+        gate,
+        application,
+        adaptive_threshold=0.75,
+        adaptive_temperature=0.01,
+    ):
         if application == "full":
             return features * gate
-        if application in ("high_frequency", "adaptive"):
+        if application in (
+            "high_frequency",
+            "adaptive",
+            "soft_adaptive",
+            "ramp_adaptive",
+        ):
             low_frequency = functional.avg_pool2d(
                 features,
                 kernel_size=3,
@@ -110,6 +122,26 @@ class SGNetWithReliabilityGate(nn.Module):
             if application == "high_frequency":
                 return high_frequency_gated
             full_gated = features * gate
+            if application == "soft_adaptive":
+                if adaptive_temperature <= 0:
+                    raise ValueError("adaptive_temperature must be positive")
+                high_frequency_weight = torch.sigmoid(
+                    (adaptive_threshold - gate.mean((1, 2, 3), keepdim=True))
+                    / adaptive_temperature
+                )
+                return full_gated + high_frequency_weight * (
+                    high_frequency_gated - full_gated
+                )
+            if application == "ramp_adaptive":
+                if adaptive_temperature <= 0:
+                    raise ValueError("adaptive_temperature must be positive")
+                high_frequency_weight = (
+                    (adaptive_threshold - gate.mean((1, 2, 3), keepdim=True))
+                    / adaptive_temperature
+                ).clamp(0.0, 1.0)
+                return full_gated + high_frequency_weight * (
+                    high_frequency_gated - full_gated
+                )
             use_high_frequency = gate.mean((1, 2, 3), keepdim=True) < adaptive_threshold
             return torch.where(use_high_frequency, high_frequency_gated, full_gated)
         raise ValueError(f"Unsupported gate application: {application}")
@@ -120,6 +152,7 @@ class SGNetWithReliabilityGate(nn.Module):
         gate_mode="learned",
         gate_application="full",
         adaptive_threshold=0.75,
+        adaptive_temperature=0.01,
         return_gate=False,
     ):
         image, depth = inputs
@@ -142,6 +175,7 @@ class SGNetWithReliabilityGate(nn.Module):
             gate,
             gate_application,
             adaptive_threshold=adaptive_threshold,
+            adaptive_temperature=adaptive_temperature,
         )
         ca1_in, r1 = base.bridge1(dp1_, gated_rgb2)
 

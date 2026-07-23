@@ -33,6 +33,13 @@ def parse_args():
     parser.add_argument("--texture-amplitude", type=float, default=0.0)
     parser.add_argument("--texture-block-size", type=int, default=4)
     parser.add_argument(
+        "--texture-pattern",
+        choices=("checkerboard", "sinusoidal", "noise"),
+        default="checkerboard",
+    )
+    parser.add_argument("--texture-period", type=float, default=8.0)
+    parser.add_argument("--texture-seed", type=int, default=20260723)
+    parser.add_argument(
         "--gate-mode",
         choices=("learned", "identity", "shuffled", "constant_mean"),
         default="learned",
@@ -83,6 +90,10 @@ def main():
                 rgb_scale=args.rgb_scale,
                 texture_amplitude=args.texture_amplitude,
                 texture_block_size=args.texture_block_size,
+                texture_pattern=args.texture_pattern,
+                texture_period=args.texture_period,
+                texture_seed=args.texture_seed,
+                sample_index=index,
             )
             prediction, _, gate = model(
                 (guidance, low_resolution),
@@ -138,6 +149,12 @@ def main():
         "rgb_scale": args.rgb_scale,
         "texture_amplitude": args.texture_amplitude,
         "texture_block_size": args.texture_block_size,
+        "texture_pattern": args.texture_pattern,
+        "texture_period": args.texture_period,
+        "texture_seed": args.texture_seed,
+        "texture_amplitude_semantics": "standard_deviation"
+        if args.texture_pattern == "noise"
+        else "peak_absolute_offset",
         "crop_border": args.crop_border,
         "metrics_unit": "8-bit depth levels",
         "metrics": aggregate(records),

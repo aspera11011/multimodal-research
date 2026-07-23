@@ -24,6 +24,13 @@ def parse_args():
     parser.add_argument("--rgb-scale", type=float, default=1.0)
     parser.add_argument("--texture-amplitude", type=float, default=0.0)
     parser.add_argument("--texture-block-size", type=int, default=4)
+    parser.add_argument(
+        "--texture-pattern",
+        choices=("checkerboard", "sinusoidal", "noise"),
+        default="checkerboard",
+    )
+    parser.add_argument("--texture-period", type=float, default=8.0)
+    parser.add_argument("--texture-seed", type=int, default=20260723)
     parser.add_argument("--crop-border", type=int, default=6)
     parser.add_argument("--depth-edge-threshold", type=float, default=2.0)
     parser.add_argument("--rgb-edge-threshold", type=float, default=8.0)
@@ -98,6 +105,38 @@ def add_checkerboard_luminance_texture(image, amplitude, block_size):
     return np.clip(image + amplitude * pattern[..., None], 0.0, 255.0)
 
 
+def add_luminance_texture(
+    image,
+    amplitude,
+    pattern="checkerboard",
+    block_size=4,
+    period=8.0,
+    seed=20260723,
+    sample_index=0,
+):
+    if amplitude < 0:
+        raise ValueError("texture_amplitude must be non-negative")
+    if amplitude == 0:
+        return image
+    if pattern == "checkerboard":
+        return add_checkerboard_luminance_texture(image, amplitude, block_size)
+
+    height, width = image.shape[:2]
+    if pattern == "sinusoidal":
+        if period <= 0:
+            raise ValueError("texture_period must be positive")
+        rows = np.arange(height, dtype=np.float32)[:, None]
+        columns = np.arange(width, dtype=np.float32)[None, :]
+        texture = np.sin(2.0 * np.pi * (rows + columns) / period)
+    elif pattern == "noise":
+        seed_sequence = np.random.SeedSequence([seed, sample_index])
+        rng = np.random.default_rng(seed_sequence)
+        texture = rng.standard_normal((height, width), dtype=np.float32)
+    else:
+        raise ValueError(f"Unsupported texture_pattern: {pattern}")
+    return np.clip(image + amplitude * texture[..., None], 0.0, 255.0)
+
+
 def perturb_rgb(
     image,
     shift_x=0,
@@ -105,13 +144,21 @@ def perturb_rgb(
     rgb_scale=1.0,
     texture_amplitude=0.0,
     texture_block_size=4,
+    texture_pattern="checkerboard",
+    texture_period=8.0,
+    texture_seed=20260723,
+    sample_index=0,
 ):
     output = center_scale_with_edge_padding(image, rgb_scale)
     output = shift_with_edge_padding(output, shift_x, shift_y)
-    return add_checkerboard_luminance_texture(
+    return add_luminance_texture(
         output,
         texture_amplitude,
-        texture_block_size,
+        pattern=texture_pattern,
+        block_size=texture_block_size,
+        period=texture_period,
+        seed=texture_seed,
+        sample_index=sample_index,
     )
 
 
@@ -162,6 +209,10 @@ def prepare_tensors(
     rgb_scale=1.0,
     texture_amplitude=0.0,
     texture_block_size=4,
+    texture_pattern="checkerboard",
+    texture_period=8.0,
+    texture_seed=20260723,
+    sample_index=0,
 ):
     perturbed_rgb = perturb_rgb(
         rgb,
@@ -170,6 +221,10 @@ def prepare_tensors(
         rgb_scale=rgb_scale,
         texture_amplitude=texture_amplitude,
         texture_block_size=texture_block_size,
+        texture_pattern=texture_pattern,
+        texture_period=texture_period,
+        texture_seed=texture_seed,
+        sample_index=sample_index,
     )
     rgb = np.ascontiguousarray(perturbed_rgb / 255.0)
     depth_normalized = np.ascontiguousarray(depth / 255.0)
@@ -266,6 +321,10 @@ def main():
                 rgb_scale=args.rgb_scale,
                 texture_amplitude=args.texture_amplitude,
                 texture_block_size=args.texture_block_size,
+                texture_pattern=args.texture_pattern,
+                texture_period=args.texture_period,
+                texture_seed=args.texture_seed,
+                sample_index=index,
             )
             output = model((guidance, low_resolution))
             prediction = output[0] if isinstance(output, (tuple, list)) else output
@@ -295,6 +354,12 @@ def main():
         "rgb_scale": args.rgb_scale,
         "texture_amplitude": args.texture_amplitude,
         "texture_block_size": args.texture_block_size,
+        "texture_pattern": args.texture_pattern,
+        "texture_period": args.texture_period,
+        "texture_seed": args.texture_seed,
+        "texture_amplitude_semantics": "standard_deviation"
+        if args.texture_pattern == "noise"
+        else "peak_absolute_offset",
         "crop_border": args.crop_border,
         "depth_edge_threshold": args.depth_edge_threshold,
         "rgb_edge_threshold": args.rgb_edge_threshold,
